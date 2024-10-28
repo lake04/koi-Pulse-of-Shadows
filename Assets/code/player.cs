@@ -8,7 +8,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class player : MonoBehaviour
 {
-    #region 변수들
+    #region 플레이어 정보
     [Header("player")]
     public int hp =5;
     public float damge =2f;
