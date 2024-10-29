@@ -7,21 +7,20 @@ public class bullet : MonoBehaviour
 {
     public enemy enemy;
     private Rigidbody2D rb;
+    public player player;
 
     private void Awake()
     {
        rb = GetComponent<Rigidbody2D>();
+       player = GetComponent<player>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
             Debug.Log("attack");
+         
             collision.GetComponent<enemy>().onDamge();
             Die();
         }

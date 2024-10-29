@@ -24,11 +24,15 @@ public class player : MonoBehaviour
     private bool isDashing;
     public float dashSpeed = 5f;
     private float dashingTime = 0.2f;
-    private float dashCoolDown = 0.3f;
+    private float dashCoolDown = 0.2f;
+    private float effecting =1f;
 
     [Header("effect")]
     public TrailRenderer trail;
     public GameObject dashEffect;
+    public GameObject dashEffextPos;
+    public Animator ain;
+    public bool isShake;
    
     public Rigidbody2D rigidbody2D;
     public RaycastHit hit;
@@ -40,6 +44,8 @@ public class player : MonoBehaviour
     public GameObject prefabBullet;
     public GameObject bulletPos;
     public float bulletSpeed = 20f;
+    public float shootCoolTime = 0.5f;
+    public bool isShoot = true;
     Vector3 dir; //마우스 포인터 방향을 저장할 변수
     Camera cam; //메인 카메라
     #endregion
@@ -48,15 +54,17 @@ public class player : MonoBehaviour
     {
         cam = Camera.main;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        dashEffect.SetActive(false);
+        ain = GetComponent<Animator>();
     }
 
     void Update()
     {
         move();
-        dir = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Input.GetMouseButtonDown(0) && isShoot)
         {
+            dir = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
             StartCoroutine(shoot());
         }
 
@@ -64,7 +72,7 @@ public class player : MonoBehaviour
         {
             if (Physics.Raycast(transform.position,transform.forward ,out hit))
             {
-                // 탁구 라켓에 맞으면
+                
                 if (hit.transform.CompareTag("wall"))
                 {
                     Debug.Log("wall");
@@ -77,6 +85,7 @@ public class player : MonoBehaviour
         else
         {
             trail.emitting = false;
+          
         }
     }
 
@@ -94,24 +103,28 @@ public class player : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-
-       /* transform.position += moveDistance * dashSpeed;*/
-     
+      
+        isShake = true;
+        
+        transform.position += moveDistance * dashSpeed;
+  
         trail.emitting = true;
         yield return new WaitForSeconds(dashingTime);
 
         isDashing = false;
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
-
+        yield return new WaitForSeconds(effecting);
       
+        dashEffect.SetActive(false);
+
     }
 
     public void onDamge()
     {
         if(hp>0)
         {
-            hp -= dmage;
+            hp--;
         }
         
         else if( hp <=0 )
@@ -122,11 +135,12 @@ public class player : MonoBehaviour
 
     public IEnumerator shoot() 
     {
-       
+        isShoot = false;
         GameObject bullet = Instantiate(prefabBullet,bulletPos.transform.position,Quaternion.identity);
         bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(dir.normalized * bulletSpeed, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(2f);
-        
+
+        yield return new WaitForSeconds(shootCoolTime);
+        isShoot = true;
     }
 
     public void move()
@@ -137,6 +151,4 @@ public class player : MonoBehaviour
         moveDistance = new Vector3(x, y, 0);
         transform.position += moveDistance * moveSpeed * Time.deltaTime;
     }
-
-   
 }

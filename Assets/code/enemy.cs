@@ -55,7 +55,7 @@ public class enemy : MonoBehaviour
     {
         if (hp > 0)
         {
-            hp--;
+            hp --;
         }
 
         else if (hp <= 0)
