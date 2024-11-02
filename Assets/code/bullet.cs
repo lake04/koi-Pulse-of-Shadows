@@ -20,7 +20,6 @@ public class bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             Debug.Log("attack");
-         
             collision.GetComponent<enemy>().onDamge();
             Die();
         }

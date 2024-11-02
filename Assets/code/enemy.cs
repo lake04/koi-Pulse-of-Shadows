@@ -37,7 +37,7 @@ public class enemy : MonoBehaviour
         Vector2 direction = new Vector2(transform.position.x - playerTransform.position.x, transform.position.y - playerTransform.position.y);
 
         RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction,isLayer);
-       
+        Debug.DrawRay(transform.position, direction, new Color(0, 1, 0));
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion angleAxis = Quaternion.AngleAxis(angle, Vector3.forward);
