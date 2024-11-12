@@ -16,13 +16,14 @@ public class enemy : MonoBehaviour
     public player player;
     Transform playerTransform;
     public  Rigidbody2D rigidbody2D;
-    public bullet bullet;
+
     #endregion
+
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        bullet = GetComponent<bullet>();
+     
         player = GetComponent<player>();
     }
    

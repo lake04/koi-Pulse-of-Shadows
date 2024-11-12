@@ -7,7 +7,10 @@ public class pattern : MonoBehaviour
 {
     [SerializeField]
     private GameObject enemy;
+    [SerializeField]
+    private GameObject spawnPos;
     private float pattenCoolTime = 2f;
+    private float spawnCycle; //적 생성 주기
     private bool ispatten = true;
     float random_num;
     // Start is called before the first frame update
@@ -24,7 +27,7 @@ public class pattern : MonoBehaviour
  
     IEnumerator Pattern1()
     {
-        Instantiate(enemy);
+        Instantiate(enemy,spawnPos.transform.position,quaternion.identity);
         ispatten = true;
         yield return new WaitForSeconds(pattenCoolTime);
     }
@@ -46,4 +49,19 @@ public class pattern : MonoBehaviour
             Debug.Log("3");
         }
     }
+
+/*    private IEnumerator SpawnEnemys()
+    {
+        //패턴 시작 전 잠시 대기하는 시간
+        float waitTime = 1;
+        yield return new WaitForSeconds(waitTime);
+
+        while (true)
+        {
+            Vector3 position = new Vector3(Random.Range(Constants.min.x, Constants.max.x), Constants.max.y, 0);
+            Instantiate(enemy, position, Quaternion.identity);
+            yield return new WaitForSeconds(spawnCycle);
+        }
+    }*/
+
 }

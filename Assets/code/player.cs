@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class player : MonoBehaviour
@@ -20,11 +21,11 @@ public class player : MonoBehaviour
     public float attackTimde = 2f;
     #endregion
     [Header("dash")]
-    private bool canDash =true;
+    public bool canDash =true;
     private bool isDashing;
     public float dashSpeed = 5f;
-    private float dashingTime = 0.2f;
-    private float dashCoolDown = 0.2f;
+    private float dashingTime = 0.5f;
+    private float dashCoolDown = 0.5f;
     private float effecting =1f;
 
     #region effect
@@ -38,9 +39,8 @@ public class player : MonoBehaviour
 
     public Rigidbody2D rigidbody2D;
     public RaycastHit hit;
-    
+
     public Vector3 moveDistance = Vector3.zero;
-    private Vector3 rayDistance;
 
     #region bullet
     [Header("bullet")]
@@ -59,16 +59,14 @@ public class player : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         dashEffect.SetActive(false);
         ain = GetComponent<Animator>();
-
-        rayDistance = new Vector3(transform.position.x+1,transform.position.y+1,0);
+       
     }
 
     void Update()
     {
+
+
         move();
-
-      
-
 
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
@@ -78,31 +76,14 @@ public class player : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
-            if (Physics.Raycast(transform.position,transform.forward ,out hit))
-            {
-                
-                if (hit.transform.CompareTag("wall"))
-                {
-                    Debug.Log("wall");
-                }
-            }
+         
             StartCoroutine (desh());
         }
        
-        else
-        {
-            trail.emitting = false;
-        }
-
-        Debug.DrawRay(transform.position, rayDistance, new Color(0, 20, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(transform.position, moveDistance, 20, LayerMask.GetMask("wall"));
-        if (rayHit.collider != null)
-        {
-            Debug.Log("wall");
-            dashSpeed = 2;
-        }
            
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -118,7 +99,6 @@ public class player : MonoBehaviour
         isDashing = true;
       
         isShake = true;
-        rayDistance = transform.position + moveDistance;
 
         transform.position += moveDistance * dashSpeed;
         
@@ -130,7 +110,7 @@ public class player : MonoBehaviour
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
         yield return new WaitForSeconds(effecting);
-      
+        trail.emitting = false;
         dashEffect.SetActive(false);
 
     }
