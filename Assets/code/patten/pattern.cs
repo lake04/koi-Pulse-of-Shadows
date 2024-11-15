@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class pattern : MonoBehaviour
@@ -13,21 +14,28 @@ public class pattern : MonoBehaviour
     private float spawnCycle; //적 생성 주기
     private bool ispatten = true;
     float random_num;
-    // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+        //Collider2D collider2D = GetComponent<Collider2D>();
+    }
+
+    private void Update()
+    {
+        
+       
+    }
+
     void Start()
     {
         InvokeRepeating("spawn", 1f, 1.3f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    
-    }
- 
+
     IEnumerator Pattern1()
     {
-        Instantiate(enemy,spawnPos.transform.position,quaternion.identity);
+        Instantiate(enemy,transform.position,quaternion.identity);
         ispatten = true;
         yield return new WaitForSeconds(pattenCoolTime);
     }
@@ -49,19 +57,5 @@ public class pattern : MonoBehaviour
             Debug.Log("3");
         }
     }
-
-/*    private IEnumerator SpawnEnemys()
-    {
-        //패턴 시작 전 잠시 대기하는 시간
-        float waitTime = 1;
-        yield return new WaitForSeconds(waitTime);
-
-        while (true)
-        {
-            Vector3 position = new Vector3(Random.Range(Constants.min.x, Constants.max.x), Constants.max.y, 0);
-            Instantiate(enemy, position, Quaternion.identity);
-            yield return new WaitForSeconds(spawnCycle);
-        }
-    }*/
 
 }
