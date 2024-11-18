@@ -7,6 +7,7 @@ TagManager:
   - wall
   - enemy
   - bullet
+  - laser
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - OffDamge
   - PostProcess
   - Wall
-  - 
+  - laser
   - 
   - 
   - 

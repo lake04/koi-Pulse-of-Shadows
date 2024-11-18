@@ -19,14 +19,14 @@ public class enemy : MonoBehaviour
 
     #endregion
 
+    public GameManger manger;
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-     
+        manger = FindAnyObjectByType<GameManger>();
         player = GetComponent<player>();
     }
-   
 
     private void Update()
     {
@@ -54,14 +54,15 @@ public class enemy : MonoBehaviour
 
     public void onDamge()
     {
-        if (hp > 0)
+        if (hp >=0)
         {
             hp --;
         }
 
-        else if (hp <= 0)
+        else if (hp <0)
         {
             Destroy(this.gameObject);
+            manger.ex++;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManger : MonoBehaviour
 {
     public Text exeText;
-    public int ex = 0;
+    public int ex;
     public int exMax = 5;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,6 @@ public class GameManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        exeText.text = ex.ToString() + "/" + exMax.ToString();
-
+        exeText.text = "EX:"+ ex.ToString() + "/" + exMax.ToString();
     }
 }

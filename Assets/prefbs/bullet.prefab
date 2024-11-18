@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   player: {fileID: 0}
+  gameManger: {fileID: 0}
 --- !u!96 &-4953166442640809086
 TrailRenderer:
   serializedVersion: 3

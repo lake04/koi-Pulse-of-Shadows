@@ -40,7 +40,7 @@ public class spawn : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
 
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
             GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
@@ -55,7 +55,7 @@ public class spawn : MonoBehaviour
             for (int i = 0; i < 15; i++)
             {
                 GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
-                yield return new WaitForSeconds(1.2f);
+                yield return new WaitForSeconds(0.8f);
                 Destroy(g);
             }
 

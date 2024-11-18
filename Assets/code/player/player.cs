@@ -35,8 +35,6 @@ public class player : MonoBehaviour
     #region effect
     [Header("effect")]
     public TrailRenderer trail;
-    public GameObject dashEffect;
-    public GameObject dashEffextPos;
     public Animator ain;
     public bool isShake;
     #endregion 
@@ -62,7 +60,7 @@ public class player : MonoBehaviour
     {
         mainCamera = Camera.main;
         rigidbody2D = GetComponent<Rigidbody2D>();
-        dashEffect.SetActive(false);
+  
         ain = GetComponent<Animator>();
     }
 
@@ -75,7 +73,6 @@ public class player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
-            /*dir = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));*/
             StartCoroutine(shoot());
         }
 
@@ -83,12 +80,16 @@ public class player : MonoBehaviour
         {
             StartCoroutine (desh());
         }
-           
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("enemy"))
+        {
+            onDamge();
+            Debug.Log("dagme");
+        }
+        else if (gameObject.CompareTag("laser"))
         {
             onDamge();
             Debug.Log("dagme");
@@ -112,7 +113,7 @@ public class player : MonoBehaviour
         canDash = true;
         yield return new WaitForSeconds(effecting);
         trail.emitting = false;
-        dashEffect.SetActive(false);
+       
 
     }
 
@@ -133,8 +134,6 @@ public class player : MonoBehaviour
     {
         isShoot = false;
         GameObject bullet = Instantiate(prefabBullet, bulletPos.transform.position, transform.rotation);
-        /*bullet.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed, ForceMode2D.Impulse);*/
-
         yield return new WaitForSeconds(shootCoolTime);
         isShoot = true;
     }
