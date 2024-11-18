@@ -15,6 +15,9 @@ public class pattern : MonoBehaviour
     private bool ispatten = true;
     float random_num;
 
+    [SerializeField]
+    private GameObject l;
+    lazer lazer;
 
     private void Awake()
     {
@@ -24,21 +27,21 @@ public class pattern : MonoBehaviour
     private void Update()
     {
         
-       
-    }
 
+    }
     void Start()
     {
         InvokeRepeating("spawn", 1f, 1.3f);
     }
 
 
-    IEnumerator Pattern1()
+    IEnumerator enemyPattern()
     {
         Instantiate(enemy,transform.position,quaternion.identity);
         ispatten = true;
         yield return new WaitForSeconds(pattenCoolTime);
     }
+
 
     private void spawn()
     {
@@ -46,7 +49,7 @@ public class pattern : MonoBehaviour
         Debug.Log(random_num);
         if (random_num == 2)
         {
-            StartCoroutine(Pattern1());
+            StartCoroutine(enemyPattern());
         }
         if (random_num == 3)
         {
