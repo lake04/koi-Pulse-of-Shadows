@@ -10,7 +10,7 @@ public class bullet : MonoBehaviour
     private Rigidbody2D rb;
     public player player;
     private float speed = 7f;
-  
+    int x;
 
     private void Awake()
     {
