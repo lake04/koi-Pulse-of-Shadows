@@ -7,9 +7,12 @@ public class spawn : MonoBehaviour
     public GameObject rangeObject;
     BoxCollider2D rangeCollider;
     public GameObject capsul;
-
+    [SerializeField]
+    private GameObject pt2;
     [SerializeField]
     private GameObject l;
+    public int enemyCount;
+    public int totalEnemy =0;
 
     private void Awake()
     {
@@ -17,8 +20,9 @@ public class spawn : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(RandomRespawn_Coroutine());
+       /* StartCoroutine(RandomRespawn_Coroutine());*/
         StartCoroutine(laserPatten());
+        StartCoroutine(patten2());
     }
 
     Vector3 Return_RandomPosition()
@@ -35,15 +39,37 @@ public class spawn : MonoBehaviour
         Vector3 respawnPosition = originPosition + RandomPostion;
         return respawnPosition;
     }
+    private void Update()
+    {
+        if (enemyCount < totalEnemy)
+        {
+            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
+            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
+            enemyCount++;
+        }
+    }
+
 
     IEnumerator RandomRespawn_Coroutine()
+    {
+       if(enemyCount <= totalEnemy)
+        {
+            yield return new WaitForSeconds(1f);
+
+            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
+            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
+            enemyCount++;
+        }
+    }
+
+    IEnumerator patten2()
     {
         while (true)
         {
             yield return new WaitForSeconds(5f);
 
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
-            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
+            GameObject instantCapsul = Instantiate(pt2, Return_RandomPosition(), Quaternion.identity);
         }
     }
 
@@ -55,13 +81,11 @@ public class spawn : MonoBehaviour
             for (int i = 0; i < 15; i++)
             {
                 GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
-                yield return new WaitForSeconds(0.8f);
+                yield return new WaitForSeconds(0.3f);
                 Destroy(g);
             }
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(5,10));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
         }
     }
-
-  
 }

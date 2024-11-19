@@ -7,7 +7,7 @@ public class enemy : MonoBehaviour
 {
     #region enemy¡§∫∏
     [Header("enemy")]
-    public int hp = 10;
+    public int hp = 2;
     public float distance;
     public LayerMask isLayer;
     public float speed;
@@ -16,6 +16,7 @@ public class enemy : MonoBehaviour
     public player player;
     Transform playerTransform;
     public  Rigidbody2D rigidbody2D;
+    public spawn sp;
 
     #endregion
 
@@ -25,7 +26,8 @@ public class enemy : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         manger = FindAnyObjectByType<GameManger>();
-        player = GetComponent<player>();
+        player = FindAnyObjectByType<player>();
+        sp = FindAnyObjectByType<spawn>();
     }
 
     private void Update()
@@ -58,11 +60,11 @@ public class enemy : MonoBehaviour
         {
             hp --;
         }
-
         else if (hp <0)
         {
             Destroy(this.gameObject);
             manger.ex++;
+            sp.enemyCount--;
         }
     }
 }

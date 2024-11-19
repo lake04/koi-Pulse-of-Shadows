@@ -6,7 +6,7 @@ using UnityEngine;
 public class AllyController : MonoBehaviour
 {
     public LayerMask enemyLayer; //레이어 선택
-    float FindRange = 2.5f; //범위
+    float FindRange = 2.8f; //범위
 
 
     public player player;

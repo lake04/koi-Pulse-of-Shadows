@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - bullet
   - laser
+  - pt2
   layers:
   - Default
   - TransparentFX

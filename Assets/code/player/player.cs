@@ -8,6 +8,7 @@ using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEditor.PlayerSettings;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -15,9 +16,6 @@ public class player : MonoBehaviour
     [Header("player")]
     public int hp = 5;
     public int dmage = 2;
-   
-    public float gold;
-   
     public float moveSpeed = 7f;
     public float attackTimde = 2f;
     #endregion
@@ -39,7 +37,7 @@ public class player : MonoBehaviour
     public bool isShake;
     #endregion 
 
-    public Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody;
     public RaycastHit hit;
 
     public Vector3 moveDistance = Vector3.zero;
@@ -47,19 +45,17 @@ public class player : MonoBehaviour
     #region bullet
     [Header("bullet")]
     private Camera mainCamera;
-
     public GameObject prefabBullet;
     public UnityEngine.Transform bulletPos;
     public float bulletSpeed = 20f;
     public float shootCoolTime = 0.5f;
     public bool isShoot = true;
-    Vector3 dir; //마우스 포인터 방향을 저장할 변수
     #endregion
 
     private void Awake()
     {
         mainCamera = Camera.main;
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody  = GetComponent<Rigidbody2D>();
   
         ain = GetComponent<Animator>();
     }
@@ -68,6 +64,9 @@ public class player : MonoBehaviour
     {
         Vector2 len = mainCamera.ScreenToWorldPoint(Input.mousePosition)- transform.position;
         float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
+
+        
+
         transform.rotation = quaternion.Euler(0, 0, z);
         move();
 
@@ -82,17 +81,26 @@ public class player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(gameObject.CompareTag("enemy"))
+        {
+            onDamge();
+            Debug.Log("damage");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.CompareTag("enemy"))
+       if(gameObject.CompareTag("laser"))
         {
             onDamge();
-            Debug.Log("dagme");
+            Debug.Log("damage");
         }
-        else if (gameObject.CompareTag("laser"))
+       else if(gameObject.CompareTag("pt2"))
         {
             onDamge();
-            Debug.Log("dagme");
+            Debug.Log("damage");
         }
     }
     private IEnumerator desh()
@@ -121,11 +129,13 @@ public class player : MonoBehaviour
     {
         if(hp>0)
         {
+            Debug.Log("hp-1");
             hp--;
         }
         
         else if( hp <=0 )
         {
+            SceneManager.LoadScene(1);
             Destroy(this.gameObject);
         }
     }

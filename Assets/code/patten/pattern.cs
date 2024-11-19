@@ -14,6 +14,7 @@ public class pattern : MonoBehaviour
     private float spawnCycle; //利 积己 林扁
     private bool ispatten = true;
     float random_num;
+   
 
     [SerializeField]
     private GameObject l;
@@ -24,11 +25,7 @@ public class pattern : MonoBehaviour
         //Collider2D collider2D = GetComponent<Collider2D>();
     }
 
-    private void Update()
-    {
-        
 
-    }
     void Start()
     {
         InvokeRepeating("spawn", 1f, 1.3f);
