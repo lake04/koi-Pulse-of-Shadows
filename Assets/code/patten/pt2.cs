@@ -7,7 +7,6 @@ public class pt2 : MonoBehaviour
     private Rigidbody2D rb;
     private float speed = 7f;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

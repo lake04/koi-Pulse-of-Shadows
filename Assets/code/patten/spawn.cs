@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class lazer
+{
+
+}
+
 public class spawn : MonoBehaviour
 {
     public GameObject rangeObject;
@@ -43,19 +48,6 @@ public class spawn : MonoBehaviour
     {
         if (enemyCount < totalEnemy)
         {
-            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
-            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
-            enemyCount++;
-        }
-    }
-
-
-    IEnumerator RandomRespawn_Coroutine()
-    {
-       if(enemyCount <= totalEnemy)
-        {
-            yield return new WaitForSeconds(1f);
-
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
             GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
             enemyCount++;

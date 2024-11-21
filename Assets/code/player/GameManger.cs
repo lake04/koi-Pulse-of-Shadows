@@ -8,15 +8,18 @@ public class GameManger : MonoBehaviour
     public Text exeText;
     public int ex;
     public int exMax = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public Text hpText;
+    public player player;
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<player>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         exeText.text = "EX:"+ ex.ToString() + "/" + exMax.ToString();
+        hpText.text  = "hp:" + player.hp.ToString()+ "/" + player.maxhp.ToString();
     }
 }

@@ -15,6 +15,7 @@ public class player : MonoBehaviour
     #region 플레이어 정보
     [Header("player")]
     public int hp = 5;
+    public int maxhp = 5;
     public int dmage = 2;
     public float moveSpeed = 7f;
     public float attackTimde = 2f;
@@ -33,13 +34,11 @@ public class player : MonoBehaviour
     #region effect
     [Header("effect")]
     public TrailRenderer trail;
-    public Animator ain;
-    public bool isShake;
     #endregion 
 
     public Rigidbody2D rigidbody;
     public RaycastHit hit;
-
+    
     public Vector3 moveDistance = Vector3.zero;
 
     #region bullet
@@ -56,23 +55,19 @@ public class player : MonoBehaviour
     {
         mainCamera = Camera.main;
         rigidbody  = GetComponent<Rigidbody2D>();
-  
-        ain = GetComponent<Animator>();
     }
 
     void Update()
     {
-        Vector2 len = mainCamera.ScreenToWorldPoint(Input.mousePosition)- transform.position;
+        Vector2 len = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
-
-        
-
         transform.rotation = quaternion.Euler(0, 0, z);
+
         move();
 
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
-            StartCoroutine(shoot());
+            /*StartCoroutine(shoot());*/
         }
 
         else if (Input.GetKeyDown(KeyCode.Space) && canDash)
@@ -81,37 +76,47 @@ public class player : MonoBehaviour
         }
     }
 
+    #region 충돌 처리
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("enemy"))
         {
             onDamge();
             Debug.Log("damage");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("laser"))
+        {
+            onDamge();
+            Debug.Log("damage");
+        }
+        else if (collision.gameObject.CompareTag("pt2"))
+        {
+            onDamge();
+            Debug.Log("damage");
+        }
+    }
+    #endregion 
+
+    public void onDamge()
+    {
+        if (hp > 0) hp--;
+
+        else if (hp <= 0)
+        {
+            SceneManager.LoadScene(1);
+            Destroy(this.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       if(gameObject.CompareTag("laser"))
-        {
-            onDamge();
-            Debug.Log("damage");
-        }
-       else if(gameObject.CompareTag("pt2"))
-        {
-            onDamge();
-            Debug.Log("damage");
-        }
-    }
     private IEnumerator desh()
     {
         canDash = false;
         isDashing = true;
-      
-        isShake = true;
 
         transform.position += moveDistance * dashSpeed;
-        
 
         trail.emitting = true;
         yield return new WaitForSeconds(dashingTime);
@@ -125,22 +130,7 @@ public class player : MonoBehaviour
 
     }
 
-    public void onDamge()
-    {
-        if(hp>0)
-        {
-            Debug.Log("hp-1");
-            hp--;
-        }
-        
-        else if( hp <=0 )
-        {
-            SceneManager.LoadScene(1);
-            Destroy(this.gameObject);
-        }
-    }
-
-    public IEnumerator shoot() 
+    public IEnumerator shoot()
     {
         isShoot = false;
         GameObject bullet = Instantiate(prefabBullet, bulletPos.transform.position, transform.rotation);

@@ -162,9 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f8b23351268194a8a5558e10c4bffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 3732235674531732070, guid: 5d5225f8f5d53cb44863e741e8961a48, type: 3}
   player: {fileID: 0}
-  gameManger: {fileID: 0}
 --- !u!96 &-4953166442640809086
 TrailRenderer:
   serializedVersion: 3

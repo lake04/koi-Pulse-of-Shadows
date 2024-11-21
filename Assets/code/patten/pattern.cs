@@ -18,7 +18,6 @@ public class pattern : MonoBehaviour
 
     [SerializeField]
     private GameObject l;
-    lazer lazer;
 
     private void Awake()
     {

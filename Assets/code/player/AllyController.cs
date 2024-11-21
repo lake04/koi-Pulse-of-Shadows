@@ -8,12 +8,10 @@ public class AllyController : MonoBehaviour
     public LayerMask enemyLayer; //레이어 선택
     float FindRange = 2.8f; //범위
 
-
     public player player;
-
-    private void Awake()
+    private void Start()
     {
-       
+        player = FindAnyObjectByType<player>();
     }
 
     // Update is called once per frame
