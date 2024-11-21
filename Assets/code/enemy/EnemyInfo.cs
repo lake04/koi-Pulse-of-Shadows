@@ -17,7 +17,6 @@ public class EnemyInfo : MonoBehaviour
     Transform playerTransform;
     public  Rigidbody2D rigidbody2D;
     public spawn sp;
-
     #endregion
 
     public GameManger manger;

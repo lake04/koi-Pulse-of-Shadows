@@ -10,17 +10,24 @@ public class bullet : MonoBehaviour
     private Rigidbody2D rb;
     public player player;
     private float speed = 7f;
+    public ObjectFollowMousePosition follow;
+    Vector2 direction;
 
     private void Awake()
     {
        rb = GetComponent<Rigidbody2D>();
        player = FindAnyObjectByType<player>();
-        Destroy(this.gameObject, 3f);
-
+       follow = FindAnyObjectByType<ObjectFollowMousePosition>();
     }
-    private void Update()
+
+    private void Start()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        GameObject taget = GameObject.Find("taget");
+
+        Transform tagetPos = follow.transform;
+        direction = (tagetPos.position - transform.position).normalized;
+
+        rb.velocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,5 +39,4 @@ public class bullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }

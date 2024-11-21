@@ -38,13 +38,12 @@ public class player : MonoBehaviour
 
     public Rigidbody2D rigidbody;
     public RaycastHit hit;
-    
     public Vector3 moveDistance = Vector3.zero;
 
     #region bullet
     [Header("bullet")]
     private Camera mainCamera;
-    public GameObject prefabBullet;
+   
     public UnityEngine.Transform bulletPos;
     public float bulletSpeed = 20f;
     public float shootCoolTime = 0.5f;
@@ -59,18 +58,9 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        Vector2 len = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        float z = Mathf.Atan2(len.y, len.x) * Mathf.Rad2Deg;
-        transform.rotation = quaternion.Euler(0, 0, z);
-
         move();
 
-        if (Input.GetMouseButtonDown(0) && isShoot)
-        {
-            /*StartCoroutine(shoot());*/
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Space) && canDash)
+         if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine (desh());
         }
@@ -126,16 +116,6 @@ public class player : MonoBehaviour
         canDash = true;
         yield return new WaitForSeconds(effecting);
         trail.emitting = false;
-       
-
-    }
-
-    public IEnumerator shoot()
-    {
-        isShoot = false;
-        GameObject bullet = Instantiate(prefabBullet, bulletPos.transform.position, transform.rotation);
-        yield return new WaitForSeconds(shootCoolTime);
-        isShoot = true;
     }
 
     public void move()

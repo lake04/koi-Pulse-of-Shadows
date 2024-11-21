@@ -30,6 +30,7 @@ public class spawn : MonoBehaviour
         StartCoroutine(patten2());
     }
 
+
     Vector3 Return_RandomPosition()
     {
         Vector3 originPosition = rangeObject.transform.position;
