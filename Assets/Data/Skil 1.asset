@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4b799fcdb222ba4993171d985754184, type: 3}
-  m_Name: Skil 0
+  m_Name: Skil 1
   m_EditorClassIdentifier: 
-  skilType: 1
-  skilId: 0
-  skilName: "\uB370\uBBF8\uC9C0 "
+  skilType: 0
+  skilId: 1
+  skilName: "\uCCB4\uB825"
   skilDesc: 
-  skilIcon: {fileID: -119978507, guid: 1499a791cd172f64f86a44671eef7d9f, type: 3}
-  baseDamge: 2
-  damages:
-  - 0.5
-  - 1
-  - 1.5
-  - 2
-  - 3
+  skilIcon: {fileID: -1554284090, guid: 1499a791cd172f64f86a44671eef7d9f, type: 3}
+  baseDamge: 0
+  baseHp: 10
+  damages: 0100000002000000020000000200000003000000
+  hps: 0000000001000000010000000200000003000000

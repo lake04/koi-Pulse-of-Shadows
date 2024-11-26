@@ -22,6 +22,7 @@ public class Fire : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
             StartCoroutine(shoot());
+            player.OnShakeCamera(0.2f,0.05f);
         }
     }
 
@@ -32,5 +33,4 @@ public class Fire : MonoBehaviour
         yield return new WaitForSeconds(shootCoolTime);
         isShoot = true;
     }
-
 }

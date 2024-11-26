@@ -5,35 +5,36 @@ using System.Runtime.InteropServices;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
     #region 플레이어 정보
     [Header("player")]
-    public int hp = 5;
-    public int maxhp = 5;
-    public int dmage = 2;
+    public GameManger gameManger;
     public float moveSpeed = 7f;
     public float attackTimde = 2f;
+    public bool isdamage;
     #endregion
 
     #region 대쉬
     [Header("dash")]
     public bool canDash =true;
     private bool isDashing;
-    public float dashSpeed = 5f;
-    private float dashingTime = 0.5f;
-    private float dashCoolDown = 0.5f;
+    public float dashSpeed = 4f;
+    private float dashCoolDown = 1f;
     private float effecting =1f;
     #endregion
 
     #region effect
     [Header("effect")]
     public TrailRenderer trail;
+    public GameObject hitUi;
+
+    //카메라 흔들림
+    private float shakeTime;
+    private float shakeIntensity;
+    private float camerTime = 0.2f;
     #endregion 
 
     public Rigidbody2D rigidbody;
@@ -43,7 +44,6 @@ public class player : MonoBehaviour
     #region bullet
     [Header("bullet")]
     private Camera mainCamera;
-   
     public UnityEngine.Transform bulletPos;
     public float bulletSpeed = 20f;
     public float shootCoolTime = 0.5f;
@@ -54,6 +54,7 @@ public class player : MonoBehaviour
     {
         mainCamera = Camera.main;
         rigidbody  = GetComponent<Rigidbody2D>();
+        hitUi.SetActive(false);
     }
 
     void Update()
@@ -71,7 +72,7 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            onDamge();
+            onDamage();
             Debug.Log("damage");
         }
     }
@@ -79,24 +80,34 @@ public class player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("laser"))
         {
-            onDamge();
+            onDamage();
             Debug.Log("damage");
         }
         else if (collision.gameObject.CompareTag("pt2"))
         {
-            onDamge();
+            onDamage();
             Debug.Log("damage");
         }
     }
-    #endregion 
+    #endregion
 
-    public void onDamge()
+    public void onDamage()
     {
-        if (hp > 0) hp--;
-
-        else if (hp <= 0)
+        if (gameManger.hp > 0)
         {
-            SceneManager.LoadScene(1);
+            gameManger.hp --;
+            StartCoroutine(hitAnim());
+            StartCoroutine(coolTime());
+            OnShakeCamera(0.3f);
+              if (gameManger.hp <= 0)
+            {
+                SceneManager.LoadScene(0);
+                Destroy(this.gameObject);
+            }
+        }
+        else if (gameManger.hp <= 0)
+        {
+            SceneManager.LoadScene(0);
             Destroy(this.gameObject);
         }
     }
@@ -104,18 +115,15 @@ public class player : MonoBehaviour
     private IEnumerator desh()
     {
         canDash = false;
-        isDashing = true;
-
-        transform.position += moveDistance * dashSpeed;
-
         trail.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
-
-        isDashing = false;
+        transform.position += moveDistance * dashSpeed;
+       
         yield return new WaitForSeconds(dashCoolDown);
-        canDash = true;
-        yield return new WaitForSeconds(effecting);
         trail.emitting = false;
+        canDash = true;
+
+      /*  yield return new WaitForSeconds(effecting);*/
+
     }
 
     public void move()
@@ -126,4 +134,46 @@ public class player : MonoBehaviour
         moveDistance = new Vector3(x, y, 0);
         transform.position += moveDistance * moveSpeed * Time.deltaTime;
     }
+
+    #region camera
+    IEnumerator coolTime()
+    {
+        isdamage = true;  // 무적 상태 시작
+       
+        yield return new WaitForSeconds(1.2f);  // 무적 시간 동안 대기
+        isdamage = false;  // 무적 상태 해제
+    }
+    IEnumerator hitAnim()
+    {
+        hitUi.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        hitUi.SetActive(false);
+    }
+
+    //카메라
+    public void OnShakeCamera(float shakeTime = 0.2f, float shakeIntensity = 0.1f)
+    {
+        this.shakeTime = shakeTime;
+        this.shakeIntensity = shakeIntensity;
+        StopCoroutine(shakebyPosition());
+        StartCoroutine(shakebyPosition());
+    }
+
+    //카메라
+    private IEnumerator shakebyPosition()
+    {
+        Vector3 startPosition = mainCamera.transform.position;
+
+        while (shakeTime > 0.0f)
+        {
+            mainCamera.transform.position = startPosition + UnityEngine.Random.insideUnitSphere * shakeIntensity;
+
+            shakeTime -= Time.deltaTime;
+
+            yield return null;
+        }
+
+        mainCamera.transform.position = startPosition;
+    }
+    #endregion
 }

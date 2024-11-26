@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 576ea5e13bf8a9e4cbbdc0027e507909
+guid: 34f2f30db186d044aa0a39fec7350485
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SCI-FI_GAME_UI_Components-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 283
+        width: 235
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a868e96b489a7824aa820d710a25c980
+      internalID: -399738444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SCI-FI_GAME_UI_Components-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 181
+        width: 235
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d59266039d3a04fb9e5385d1341009
+      internalID: -552968707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SCI-FI_GAME_UI_Components-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 88
+        width: 235
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d3d7be12ed8e74d8333257c7a5c483
+      internalID: -901993687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SCI-FI_GAME_UI_Components-removebg-preview_0: -399738444
+      SCI-FI_GAME_UI_Components-removebg-preview_1: -552968707
+      SCI-FI_GAME_UI_Components-removebg-preview_2: -901993687
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

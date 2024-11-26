@@ -51,13 +51,19 @@ public class EnemyInfo : MonoBehaviour
         transform.position += (-dir.normalized * speed * Time.deltaTime);
     }
 
-    public void onDamge()
+    public void onDamage()
     {
-        if (hp >=0)
+        if (hp >0)
         {
-            hp --;
+            hp -=manger.damage;
+           if (hp <= 0)
+            {
+                Destroy(this.gameObject);
+                manger.ex++;
+                sp.enemyCount--;
+            }
         }
-        else if (hp <0)
+        else if (hp <=0)
         {
             Destroy(this.gameObject);
             manger.ex++;
