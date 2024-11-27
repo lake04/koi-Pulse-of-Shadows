@@ -35,7 +35,8 @@ public class player : MonoBehaviour
     private float shakeTime;
     private float shakeIntensity;
     private float camerTime = 0.2f;
-    #endregion 
+    public  ParticleSystem ps;
+    #endregion
 
     public Rigidbody2D rigidbody;
     public RaycastHit hit;
@@ -59,11 +60,15 @@ public class player : MonoBehaviour
 
     void Update()
     {
+        ps.transform.position = transform.position * 0.5f; 
+
         move();
 
          if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
+            OnShakeCamera(0.2f, 0.09f);
             StartCoroutine (desh());
+            
         }
     }
 

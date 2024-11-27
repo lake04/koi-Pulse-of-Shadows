@@ -108,6 +108,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rigidbody2D: {fileID: 0}
   sp: {fileID: 0}
+  dieEffect: {fileID: 775777337494005579, guid: ed5c771d7fb6b3b40a56c8d69fd778d6, type: 3}
   manger: {fileID: 0}
 --- !u!61 &2178536450260487283
 BoxCollider2D:

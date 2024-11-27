@@ -19,15 +19,5 @@ MonoBehaviour:
   skilIcon: {fileID: 1957436831, guid: 1499a791cd172f64f86a44671eef7d9f, type: 3}
   baseDamge: 0
   baseHp: 0
-  damages:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  hps:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  damages: 0200000004000000070000000800000009000000
+  hps: 0200000003000000060000000700000009000000

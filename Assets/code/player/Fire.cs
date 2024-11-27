@@ -11,6 +11,7 @@ public class Fire : MonoBehaviour
     ObjectFollowMousePosition follow;
     Vector2 direction;
     public GameObject prefabBullet;
+    public AudioClip clip;
 
     private void Awake()
     {
@@ -22,7 +23,9 @@ public class Fire : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
             StartCoroutine(shoot());
-            player.OnShakeCamera(0.2f,0.05f);
+            player.OnShakeCamera(0.2f,0.09f);
+
+            SoundManger.instance.SfxPlay("Fire", clip);
         }
     }
 

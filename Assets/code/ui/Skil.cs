@@ -11,6 +11,7 @@ public class Skil : MonoBehaviour
     public SkilData.SkilType type;
     public int rate;
     public GameManger gameManger;
+    public GameStopRewume gameStopRewume;
 
     Image icon;
     Text textLevel;
@@ -22,7 +23,6 @@ public class Skil : MonoBehaviour
 
         Text[] texts = GetComponentsInChildren<Text>();
         textLevel = texts[0];
-        gameManger.exMax = gameManger.exLevel[level];
     }
 
     private void LateUpdate()
@@ -33,34 +33,30 @@ public class Skil : MonoBehaviour
 
     public void Onclick()
     {
-        switch (data.skilType)
+        if (gameManger.skillPoint > 0)
         {
-            case SkilData.SkilType.hp_up:
-                if(level <data.damages.Length)
-                {
-                    Init(data);
-                    HpUP();
-                }
-               
-                break;
-            case SkilData.SkilType.damage_up:
-                if (level < data.damages.Length)
-                {
-                    Init(data);
-                    DamageUP();
-                }
-               /* else
-                {
-                    int nextRate = data.damages[level];
-                    LevelUp(nextRate);
-                }*/
-                break;
-            case SkilData.SkilType.healing:
-                break;
-        }
+            switch (data.skilType)
+            {
+                case SkilData.SkilType.hp_up:
 
-        level++;
-        gameManger.exMax = gameManger.exLevel[level];
+                        Init(data);
+                        HpUP();
+
+                    break;
+                case SkilData.SkilType.damage_up:
+                    if (level < data.damages.Length)
+                    {
+                        Init(data);
+                        DamageUP();
+                    }
+                    break;
+            }
+
+            level++;
+            gameManger.skillPoint = 0;
+            gameManger.exMax = gameManger.exMax + 5;
+            gameStopRewume.GameResume();
+        }
         if (level == data.damages.Length)
         {
             GetComponent<Button>().interactable = false;
@@ -72,7 +68,6 @@ public class Skil : MonoBehaviour
         //Property Set
         type = data.skilType;
         rate = data.damages[level];
-       
     }
 
 
@@ -88,5 +83,17 @@ public class Skil : MonoBehaviour
         Debug.Log("HpUP");
         gameManger.maxhp =gameManger.maxhp + rate;
         gameManger.hp = gameManger.maxhp;
+    }
+
+    public void Healing()
+    {
+        if (gameManger.skillPoint > 0)
+        {
+            Debug.Log("Healing");
+            gameManger.hp = gameManger.hp + 5;
+            level++;
+            gameManger.skillPoint = 0;
+            gameManger.exMax = gameManger.exMax + 5;
+        }
     }
 }

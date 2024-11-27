@@ -17,6 +17,7 @@ public class EnemyInfo : MonoBehaviour
     Transform playerTransform;
     public  Rigidbody2D rigidbody2D;
     public spawn sp;
+    public GameObject dieEffect;
     #endregion
 
     public GameManger manger;
@@ -59,6 +60,7 @@ public class EnemyInfo : MonoBehaviour
            if (hp <= 0)
             {
                 Destroy(this.gameObject);
+                Instantiate(dieEffect, transform.position, Quaternion.identity);
                 manger.ex++;
                 sp.enemyCount--;
             }
@@ -66,6 +68,7 @@ public class EnemyInfo : MonoBehaviour
         else if (hp <=0)
         {
             Destroy(this.gameObject);
+            Instantiate(dieEffect, transform.position, Quaternion.identity);
             manger.ex++;
             sp.enemyCount--;
         }
