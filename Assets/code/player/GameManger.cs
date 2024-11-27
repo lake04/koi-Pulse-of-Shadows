@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -29,7 +28,6 @@ public class GameManger : MonoBehaviour
         hp = maxhp;
         ui.SetActive(false);
         GameStopRewume.GameStart();
-       
     }
 
     void Update()
@@ -55,10 +53,7 @@ public class GameManger : MonoBehaviour
         else if (skillPoint <= 0)
         {
             ui.SetActive(false);
-        /*   Time.timeScale = 1;*/
         }
-
-
     }
 
 }

@@ -7,7 +7,9 @@ public class GameStopRewume : MonoBehaviour
 {
     public GameObject CountText = null;
     Text Text = null;
+    public Text Text2;
 
+    public GameObject CountText2;
 
     float GameTime = 1.5f;
     int CountDown = 3;
@@ -35,9 +37,9 @@ public class GameStopRewume : MonoBehaviour
     public void GameStart()
     {
         Time.timeScale = 0;
-        CountText.SetActive(true);
-       
-        StartCoroutine(CountDownStart());
+        CountText2.SetActive(true);
+        Text2.text = CountDown.ToString();
+        StartCoroutine(CountDownStart2());
     }
 
     public void CountDownFun()
@@ -46,6 +48,25 @@ public class GameStopRewume : MonoBehaviour
         Text.text = CountDown.ToString();
 
         StartCoroutine(CountDownStart());
+    }
+
+
+    IEnumerator CountDownStart2()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+            CountDown -= 1;
+
+            if (CountDown == 0)
+            {
+                Time.timeScale = 1;
+                CountText2.SetActive(false);
+                yield return null;
+            }
+
+            Text2.text = CountDown.ToString();
+        }
     }
 
 
@@ -66,7 +87,6 @@ public class GameStopRewume : MonoBehaviour
             Text.text = CountDown.ToString();
         }
     }
-
 
 }
 
