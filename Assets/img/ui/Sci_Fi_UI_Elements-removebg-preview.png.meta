@@ -1,0 +1,1777 @@
+fileFormatVersion: 2
+guid: 923c27027978b934db59a37075986dc2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 370
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8514795c7eb26e040bd04a995085aecd
+      internalID: -851342526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 357
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b810751f0d6426a4ea90bfb7ed0177e7
+      internalID: 1684466823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 357
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821419edd0b87b7449afc0b38cd508f4
+      internalID: -1841233639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 347
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7b8000947269d40a2d0e0590e62393
+      internalID: 1309077678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 320
+        width: 129
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf6281609481bb4eb0be708f9cd8052
+      internalID: -1076069946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 321
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d928293a786a04ca78e20c7c0492f0
+      internalID: -1237537042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 324
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75104547e9dde3341abf02af4328f732
+      internalID: 1243893924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 324
+        width: 27
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0683def34733d24aa9f2e29fce5494e
+      internalID: 1643241581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 324
+        width: 9
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a625a8f645fe13b439765da8e8a700b7
+      internalID: 551877191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 304
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ad0d0fef0107b4a90853d900ed0b6b
+      internalID: 2068716105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 304
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d0925dd99280b4f90936de8680e1d7
+      internalID: -400376733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 293
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad74e0f65aba2c458464c5dc522d9a7
+      internalID: 176003173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 283
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d14abe1ba8c1d4db70e8dca7583e84
+      internalID: 230179142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 263
+        width: 156
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb183c6d94d80994582de88640d8e63f
+      internalID: 103412202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 272
+        width: 144
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff092240dad1042438f7d39573093a71
+      internalID: -901421386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 272
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21cf91f33cb166429449514adb58260
+      internalID: -1905921670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 272
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477cd0f1707997a45bb851b84dc6ddd1
+      internalID: -1058158882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 272
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2380221cc07f214ba38653eadc5b15f
+      internalID: -115039770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 272
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f515a2c697061974d9374617112aa5d1
+      internalID: -311148510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 272
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de10aa3f9966aa044aa08f1e3a8d5b24
+      internalID: -1413625017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 272
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94d2d6fcf55f4247b6c683213075167
+      internalID: -1082531711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 272
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a2691090234494f8d0a98cc4bb818c
+      internalID: 913905168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 272
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eba6e946bf9b884daaecfd619a149d1
+      internalID: -929989026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 272
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e37b98a39fca544b62dd2b3da0f0f4
+      internalID: -228029314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 262
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aae12d3bdbc82b4789ba4d5c8e33aca
+      internalID: -144489220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 213
+        width: 132
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1c786201256234bbc00e2e33ef109a
+      internalID: -1209547921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 209
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5a541aff0406e4a85575bbc765c6f4
+      internalID: 1631430904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 222
+        width: 145
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474d325ce87a4604b8c9521a9833b8c9
+      internalID: 1209320156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 188
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d82fc2999870241b8c6703da7be99f
+      internalID: -148369340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 187
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236b9af52650e7a448d37300b99c2ffc
+      internalID: -1584178105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 198
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bea2cc10b8cbe44686beceea383a3e2
+      internalID: -177495271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 197
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abad815f84c0b8f469e82d23d9858c77
+      internalID: -1605894007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 164
+        width: 148
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643017c6b76964d40b4b40f8daf2fd53
+      internalID: 1228464992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 166
+        width: 145
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a31ab28910ad4a4ba8d9441b4424084
+      internalID: 338984642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 189
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3911ee44e608c499184cb8401ba50f
+      internalID: 1540893501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 187
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8fb6ae6ce20134191fecdf0568a4a3
+      internalID: 313311796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 165
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b98d14777c3ec4d9ea9782ed06ba2c
+      internalID: 980679498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 165
+        width: 49
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba36e41fdacf9be47a526af72548b640
+      internalID: 1872739019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 145
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177405a91936dc64492da49c9080c506
+      internalID: 1969106689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 145
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcf18b2e3b8e9243a99a76726e21644
+      internalID: 588250013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 146
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1450827a647f7042b45f57950c2e98f
+      internalID: -1044365623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 123
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4c6fa6a0b4c474fa1fbe3675b9b27c
+      internalID: -477383578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 134
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6c60b4370f39e448cf49f125046dee
+      internalID: 1558451033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 113
+        width: 149
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c234051483d2ca146844c23e821f5d31
+      internalID: 131274018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 116
+        width: 140
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95132b24f57154f449d9b018d9f8fd35
+      internalID: -2122704685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 135
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2dbb8d456b9c54fb9b0172874c14e7
+      internalID: 1234343285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 124
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b581aeba14ebc4fbb747e7fa459c26
+      internalID: 208979993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 125
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4108101a3bf1bc848b484442dc3782aa
+      internalID: -1467500902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 102
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792fb32248f75474db6d3f107c3d67a4
+      internalID: -2088332415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 114
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05dec08ec9e37dc4482482e472b0baa5
+      internalID: -1966393697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 115
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0acb5a05f44b424085bd6fb4e8161eb
+      internalID: 1899793474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_51
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 103
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04366d4b9a20564db8d4ce4c81d55f4
+      internalID: -418490297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_52
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 104
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ace2ae8b8aa52242b7b39f08f6f4439
+      internalID: 1358526036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0632bae26d1f2a140b20ba1b858c668f
+      internalID: 807758062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_54
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 88
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc6a6963aa9c76448453a4941e70310
+      internalID: 1808958485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 94
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8365197fb69c87149810b8935dcaae4b
+      internalID: -202408621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_56
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 72
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 907e353d39294c749b6c24f6cfac578b
+      internalID: -407035177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_57
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 6
+        width: 113
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac90b50e2e2a876489680bc765863421
+      internalID: -1702301938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 71
+        width: 61
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e542a1c6c76c4147b27f283ef8c5c33
+      internalID: -960591731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_59
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 64
+        width: 96
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f097d41f692fc4aa33c0eb9f25c681
+      internalID: -761516758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_60
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 7
+        width: 131
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55b7635732406846b4bc61ea648bdde
+      internalID: -1396975003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_61
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 61
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7e625d58cb68a46a784f63074ce791
+      internalID: 289642844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_62
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 7
+        width: 96
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e821a8107b3324a9fb5c67aee95f9a
+      internalID: -856128611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_63
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 61
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec05ed08ae64064ba3a4e7705c8567e
+      internalID: 117372147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_64
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 45
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7396e57c4ca8648438e206d874a6808c
+      internalID: 374272007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_65
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 25
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4ec4fa3b21a324baf7547baaf7df63
+      internalID: -1816386927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_66
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 24
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7294bfa3652f917438116382d33555f4
+      internalID: 1576343807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_67
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 51
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf008f3084bc57843890f9d05694ad7c
+      internalID: -1625937874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_68
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 48
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab8aa2b67b5d2549bc0ae511a2de1a4
+      internalID: -912457781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_69
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 39
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4212383855108643ad10c6ba504b358
+      internalID: 1505465703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_70
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 41
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565dc8f10879d3d41822f2c11ff904ba
+      internalID: 1560721997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_71
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 40
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b021e384e467204e8ea6ae893a8b305
+      internalID: -1422772292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_72
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 30
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d599a71b0df4c4aa6a98302f2403e1
+      internalID: 448074051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_73
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 29
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262f4fba56cc57648989a8259b6ad97c
+      internalID: -1488508234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sci_Fi_UI_Elements-removebg-preview_74
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 6
+        width: 50
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6663a7b81b244b42903df336769631b
+      internalID: 2034644054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sci_Fi_UI_Elements-removebg-preview_0: -851342526
+      Sci_Fi_UI_Elements-removebg-preview_1: 1684466823
+      Sci_Fi_UI_Elements-removebg-preview_10: -400376733
+      Sci_Fi_UI_Elements-removebg-preview_11: 176003173
+      Sci_Fi_UI_Elements-removebg-preview_12: 230179142
+      Sci_Fi_UI_Elements-removebg-preview_13: 103412202
+      Sci_Fi_UI_Elements-removebg-preview_14: -901421386
+      Sci_Fi_UI_Elements-removebg-preview_15: -1905921670
+      Sci_Fi_UI_Elements-removebg-preview_16: -1058158882
+      Sci_Fi_UI_Elements-removebg-preview_17: -115039770
+      Sci_Fi_UI_Elements-removebg-preview_18: -311148510
+      Sci_Fi_UI_Elements-removebg-preview_19: -1413625017
+      Sci_Fi_UI_Elements-removebg-preview_2: -1841233639
+      Sci_Fi_UI_Elements-removebg-preview_20: -1082531711
+      Sci_Fi_UI_Elements-removebg-preview_21: 913905168
+      Sci_Fi_UI_Elements-removebg-preview_22: -929989026
+      Sci_Fi_UI_Elements-removebg-preview_23: -228029314
+      Sci_Fi_UI_Elements-removebg-preview_24: -144489220
+      Sci_Fi_UI_Elements-removebg-preview_25: -1209547921
+      Sci_Fi_UI_Elements-removebg-preview_26: 1631430904
+      Sci_Fi_UI_Elements-removebg-preview_27: 1209320156
+      Sci_Fi_UI_Elements-removebg-preview_28: -148369340
+      Sci_Fi_UI_Elements-removebg-preview_29: -1584178105
+      Sci_Fi_UI_Elements-removebg-preview_3: 1309077678
+      Sci_Fi_UI_Elements-removebg-preview_30: -177495271
+      Sci_Fi_UI_Elements-removebg-preview_31: -1605894007
+      Sci_Fi_UI_Elements-removebg-preview_32: 1228464992
+      Sci_Fi_UI_Elements-removebg-preview_33: 338984642
+      Sci_Fi_UI_Elements-removebg-preview_34: 1540893501
+      Sci_Fi_UI_Elements-removebg-preview_35: 313311796
+      Sci_Fi_UI_Elements-removebg-preview_36: 980679498
+      Sci_Fi_UI_Elements-removebg-preview_37: 1872739019
+      Sci_Fi_UI_Elements-removebg-preview_38: 1969106689
+      Sci_Fi_UI_Elements-removebg-preview_39: 588250013
+      Sci_Fi_UI_Elements-removebg-preview_4: -1076069946
+      Sci_Fi_UI_Elements-removebg-preview_40: -1044365623
+      Sci_Fi_UI_Elements-removebg-preview_41: -477383578
+      Sci_Fi_UI_Elements-removebg-preview_42: 1558451033
+      Sci_Fi_UI_Elements-removebg-preview_43: 131274018
+      Sci_Fi_UI_Elements-removebg-preview_44: -2122704685
+      Sci_Fi_UI_Elements-removebg-preview_45: 1234343285
+      Sci_Fi_UI_Elements-removebg-preview_46: 208979993
+      Sci_Fi_UI_Elements-removebg-preview_47: -1467500902
+      Sci_Fi_UI_Elements-removebg-preview_48: -2088332415
+      Sci_Fi_UI_Elements-removebg-preview_49: -1966393697
+      Sci_Fi_UI_Elements-removebg-preview_5: -1237537042
+      Sci_Fi_UI_Elements-removebg-preview_50: 1899793474
+      Sci_Fi_UI_Elements-removebg-preview_51: -418490297
+      Sci_Fi_UI_Elements-removebg-preview_52: 1358526036
+      Sci_Fi_UI_Elements-removebg-preview_53: 807758062
+      Sci_Fi_UI_Elements-removebg-preview_54: 1808958485
+      Sci_Fi_UI_Elements-removebg-preview_55: -202408621
+      Sci_Fi_UI_Elements-removebg-preview_56: -407035177
+      Sci_Fi_UI_Elements-removebg-preview_57: -1702301938
+      Sci_Fi_UI_Elements-removebg-preview_58: -960591731
+      Sci_Fi_UI_Elements-removebg-preview_59: -761516758
+      Sci_Fi_UI_Elements-removebg-preview_6: 1243893924
+      Sci_Fi_UI_Elements-removebg-preview_60: -1396975003
+      Sci_Fi_UI_Elements-removebg-preview_61: 289642844
+      Sci_Fi_UI_Elements-removebg-preview_62: -856128611
+      Sci_Fi_UI_Elements-removebg-preview_63: 117372147
+      Sci_Fi_UI_Elements-removebg-preview_64: 374272007
+      Sci_Fi_UI_Elements-removebg-preview_65: -1816386927
+      Sci_Fi_UI_Elements-removebg-preview_66: 1576343807
+      Sci_Fi_UI_Elements-removebg-preview_67: -1625937874
+      Sci_Fi_UI_Elements-removebg-preview_68: -912457781
+      Sci_Fi_UI_Elements-removebg-preview_69: 1505465703
+      Sci_Fi_UI_Elements-removebg-preview_7: 1643241581
+      Sci_Fi_UI_Elements-removebg-preview_70: 1560721997
+      Sci_Fi_UI_Elements-removebg-preview_71: -1422772292
+      Sci_Fi_UI_Elements-removebg-preview_72: 448074051
+      Sci_Fi_UI_Elements-removebg-preview_73: -1488508234
+      Sci_Fi_UI_Elements-removebg-preview_74: 2034644054
+      Sci_Fi_UI_Elements-removebg-preview_8: 551877191
+      Sci_Fi_UI_Elements-removebg-preview_9: 2068716105
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

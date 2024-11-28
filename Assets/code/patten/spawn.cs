@@ -11,9 +11,8 @@ public class spawn : MonoBehaviour
 {
     public GameObject rangeObject;
     BoxCollider2D rangeCollider;
-    public GameObject capsul;
-    [SerializeField]
-    private GameObject pt2;
+    public GameObject enemy;
+  
     [SerializeField]
     private GameObject l;
     public int enemyCount;
@@ -25,13 +24,11 @@ public class spawn : MonoBehaviour
     }
     private void Start()
     {
-       /* StartCoroutine(RandomRespawn_Coroutine());*/
         StartCoroutine(laserPatten());
-        StartCoroutine(patten2());
+   /*     StartCoroutine(patten2());*/
     }
 
-
-    Vector3 Return_RandomPosition()
+    public Vector3 Return_RandomPosition()
     {
         Vector3 originPosition = rangeObject.transform.position;
         // 콜라이더의 사이즈를 가져오는 bound.size 사용
@@ -50,21 +47,11 @@ public class spawn : MonoBehaviour
         if (enemyCount < totalEnemy)
         {
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
-            GameObject instantCapsul = Instantiate(capsul, Return_RandomPosition(), Quaternion.identity);
+            GameObject instantCapsul = Instantiate(enemy, Return_RandomPosition(), Quaternion.identity);
             enemyCount++;
         }
     }
 
-    IEnumerator patten2()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(5f);
-
-            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
-            GameObject instantCapsul = Instantiate(pt2, Return_RandomPosition(), Quaternion.identity);
-        }
-    }
 
     IEnumerator laserPatten()
     {

@@ -11,21 +11,22 @@ public class Fire : MonoBehaviour
     ObjectFollowMousePosition follow;
     Vector2 direction;
     public GameObject prefabBullet;
-    public AudioClip clip;
+
+    AudioManager audioManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = FindAnyObjectByType<player>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && isShoot)
         {
+            audioManager.PlaySFX(audioManager.bullet);
             StartCoroutine(shoot());
             player.OnShakeCamera(0.2f,0.09f);
-
-            SoundManger.instance.SfxPlay("Fire", clip);
         }
     }
 

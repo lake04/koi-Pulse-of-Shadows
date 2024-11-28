@@ -7,11 +7,11 @@ public class GameStopRewume : MonoBehaviour
 {
     public GameObject CountText = null;
     Text Text = null;
-    public Text Text2;
+   /* public Text Text2;*/
 
-    public GameObject CountText2;
+  /*  public GameObject CountText2;*/
 
-    float GameTime = 1.5f;
+    public float GameTime = 1.5f;
     int CountDown = 3;
 
     // Start is called before the first frame update
@@ -19,6 +19,7 @@ public class GameStopRewume : MonoBehaviour
     {
         Text = CountText.GetComponent<Text>();
         CountText.SetActive(false);
+        GameStart();
     }
 
     public void GameStop()
@@ -37,9 +38,8 @@ public class GameStopRewume : MonoBehaviour
     public void GameStart()
     {
         Time.timeScale = 0;
-        CountText2.SetActive(true);
-        Text2.text = CountDown.ToString();
-        StartCoroutine(CountDownStart2());
+        CountDown = 3;
+        CountDownFun();
     }
 
     public void CountDownFun()
@@ -50,24 +50,6 @@ public class GameStopRewume : MonoBehaviour
         StartCoroutine(CountDownStart());
     }
 
-
-    IEnumerator CountDownStart2()
-    {
-        while (true)
-        {
-            yield return new WaitForSecondsRealtime(1f);
-            CountDown -= 1;
-
-            if (CountDown == 0)
-            {
-                Time.timeScale = 1;
-                CountText2.SetActive(false);
-                yield return null;
-            }
-
-            Text2.text = CountDown.ToString();
-        }
-    }
 
 
     IEnumerator CountDownStart()

@@ -12,6 +12,7 @@ public class Skil : MonoBehaviour
     public int rate;
     public GameManger gameManger;
     public GameStopRewume gameStopRewume;
+    public spawn spawn;
 
     Image icon;
     Text textLevel;
@@ -52,15 +53,17 @@ public class Skil : MonoBehaviour
                     break;
             }
 
-            level++;
-            gameManger.skillPoint = 0;
-            gameManger.exMax = gameManger.exMax + 5;
-            gameStopRewume.GameResume();
+          
         }
         if (level == data.damages.Length)
         {
             GetComponent<Button>().interactable = false;
         }
+        level++;
+        gameManger.skillPoint = 0;
+        gameManger.exMax = gameManger.exMax + 5;
+        spawn.totalEnemy++;
+        gameStopRewume.GameResume();
     }
 
     public void Init(SkilData data)
@@ -95,5 +98,6 @@ public class Skil : MonoBehaviour
             gameManger.skillPoint = 0;
             gameManger.exMax = gameManger.exMax + 5;
         }
+        gameStopRewume.GameResume();
     }
 }

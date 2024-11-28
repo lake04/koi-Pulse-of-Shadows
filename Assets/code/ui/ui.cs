@@ -8,7 +8,13 @@ using System;
 public class ui : MonoBehaviour
 {
     public FadeEffect fadeEffect;
+    public GameObject pop;
 
+    private void Start()
+    {
+        popDown();
+    }
+        
     public void play()
     {
         SceneManager.LoadScene(1);
@@ -19,4 +25,15 @@ public class ui : MonoBehaviour
         Application.Quit();
         Debug.Log("quit");
     }
+
+    public void popUP()
+    {
+        pop.SetActive(true);
+    }
+
+    public void popDown()
+    {
+        pop.SetActive(false);
+    }
+
 }

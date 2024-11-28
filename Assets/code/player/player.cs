@@ -19,11 +19,11 @@ public class player : MonoBehaviour
 
     #region ´ë½¬
     [Header("dash")]
-    public bool canDash =true;
+    public bool canDash = true;
     private bool isDashing;
     public float dashSpeed = 4f;
     private float dashCoolDown = 1f;
-    private float effecting =1f;
+    private float effecting = 1f;
     #endregion
 
     #region effect
@@ -35,7 +35,7 @@ public class player : MonoBehaviour
     private float shakeTime;
     private float shakeIntensity;
     private float camerTime = 0.2f;
-    public  ParticleSystem ps;
+    public ParticleSystem ps;
     #endregion
 
     public Rigidbody2D rigidbody;
@@ -54,21 +54,20 @@ public class player : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
-        rigidbody  = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
         hitUi.SetActive(false);
     }
 
     void Update()
     {
-        ps.transform.position = transform.position * 0.5f; 
+        ps.transform.position = transform.position * 0.5f;
 
         move();
 
-         if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             OnShakeCamera(0.2f, 0.09f);
-            StartCoroutine (desh());
-            
+            StartCoroutine(desh());
         }
     }
 
@@ -100,11 +99,11 @@ public class player : MonoBehaviour
     {
         if (gameManger.hp > 0)
         {
-            gameManger.hp --;
+            gameManger.hp--;
             StartCoroutine(hitAnim());
             StartCoroutine(coolTime());
             OnShakeCamera(0.3f);
-              if (gameManger.hp <= 0)
+            if (gameManger.hp <= 0)
             {
                 SceneManager.LoadScene(0);
                 Destroy(this.gameObject);
@@ -122,15 +121,21 @@ public class player : MonoBehaviour
         canDash = false;
         trail.emitting = true;
         transform.position += moveDistance * dashSpeed;
-       
+        dashEffect();
         yield return new WaitForSeconds(dashCoolDown);
         trail.emitting = false;
         canDash = true;
 
-      /*  yield return new WaitForSeconds(effecting);*/
+        /*  yield return new WaitForSeconds(effecting);*/
 
     }
 
+    IEnumerator dashEffect()
+    {
+        
+
+        yield return new WaitForSeconds(dashCoolDown);
+    }
     public void move()
     {
         float x = Input.GetAxis("Horizontal");

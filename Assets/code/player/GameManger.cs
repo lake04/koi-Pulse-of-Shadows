@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManger : MonoBehaviour
 {
@@ -22,25 +23,31 @@ public class GameManger : MonoBehaviour
     public GameObject ui;
     public GameStopRewume GameStopRewume;
 
+    [SerializeField]
+    private GameController gameController;
+
+    [SerializeField]
+    private TextMeshProUGUI textScore;
+
     private void Start()
     {
         player = FindAnyObjectByType<player>();
         hp = maxhp;
         ui.SetActive(false);
-        GameStopRewume.GameStart();
     }
 
     void Update()
     {
         exeText.text = "EX:" + ex.ToString() + "/" + exMax.ToString();
-        hpText.text = "hp:" + hp.ToString() + "/" + maxhp.ToString();
-
+        hpText.text =  "Hp:" + hp.ToString() + "/" + maxhp.ToString();
+        textScore.text = gameController.CurremtScore.ToString("F0");
         if (ex >= exMax)
         {
             skillPoint = 1;
             GameStopRewume.GameStop();
             if (skillPoint > 0)
             {
+                
                 ui.SetActive(true);
             }
         }
@@ -48,7 +55,7 @@ public class GameManger : MonoBehaviour
         else if (skillPoint > 0)
         {
             ui.SetActive(true);
-            GameStopRewume.GameStop();
+          
         }
         else if (skillPoint <= 0)
         {

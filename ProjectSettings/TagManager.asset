@@ -9,6 +9,7 @@ TagManager:
   - bullet
   - laser
   - pt2
+  - Audio
   layers:
   - Default
   - TransparentFX
