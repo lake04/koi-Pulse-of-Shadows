@@ -26,12 +26,13 @@ public class PatternCountroller : MonoBehaviour
 
     private void Update()
     {
-       //현제 재생중인 패턴이 종료되어 오브젝트가 비활성화되면
-       if(currentPattern.activeSelf == false)
-        {
-            //다음 패턴
-            ChangePattern();
-        }
+        ChangePattern();
+        //현제 재생중인 패턴이 종료되어 오브젝트가 비활성화되면
+        /* if(currentPattern.activeSelf == false)
+          {
+              //다음 패턴
+              ChangePattern();
+          }*/
     }
 
     public void GameOver()
