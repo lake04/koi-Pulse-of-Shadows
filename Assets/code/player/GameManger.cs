@@ -21,6 +21,7 @@ public class GameManger : MonoBehaviour
     public Text hpText;
     public player player;
     public GameObject ui;
+    public GameObject levelUpUi;
     public GameStopRewume GameStopRewume;
 
     [SerializeField]
@@ -47,7 +48,7 @@ public class GameManger : MonoBehaviour
             GameStopRewume.GameStop();
             if (skillPoint > 0)
             {
-                
+                StartCoroutine(levelUping());
                 ui.SetActive(true);
             }
         }
@@ -55,7 +56,9 @@ public class GameManger : MonoBehaviour
         else if (skillPoint > 0)
         {
             ui.SetActive(true);
-          
+            StartCoroutine(levelUping());
+
+
         }
         else if (skillPoint <= 0)
         {
@@ -63,4 +66,10 @@ public class GameManger : MonoBehaviour
         }
     }
 
+    IEnumerator levelUping()
+    {
+        levelUpUi.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        levelUpUi.SetActive(false);
+    }
 }

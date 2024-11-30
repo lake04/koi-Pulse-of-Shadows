@@ -92,6 +92,12 @@ public class player : MonoBehaviour
             onDamage();
             Debug.Log("damage");
         }
+
+        else if (collision.gameObject.CompareTag("enemy"))
+        {
+            onDamage();
+            Debug.Log("damage");
+        }
     }
     #endregion
 

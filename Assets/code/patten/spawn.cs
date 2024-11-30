@@ -7,6 +7,9 @@ public class lazer
 
 }
 
+/*public class p4
+{
+}*/
 public class spawn : MonoBehaviour
 {
     public GameObject rangeObject;
@@ -61,11 +64,28 @@ public class spawn : MonoBehaviour
             for (int i = 0; i < 15; i++)
             {
                 GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.2f);
                 Destroy(g);
             }
 
             yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
         }
     }
+
+   /* IEnumerator Patten4()
+    {
+        while (true)
+        {
+            List<p4> lassers = new List<p4>();
+            for (int i = 0; i < 15; i++)
+            {
+                GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
+                
+                yield return new WaitForSeconds(0.2f);
+                Destroy(g);
+            }
+
+            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
+        }
+    }*/
 }

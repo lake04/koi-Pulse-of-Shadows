@@ -13,6 +13,7 @@ public class Skil : MonoBehaviour
     public GameManger gameManger;
     public GameStopRewume gameStopRewume;
     public spawn spawn;
+    public EnemyInfo enemyInfo;
 
     Image icon;
     Text textLevel;
@@ -39,9 +40,11 @@ public class Skil : MonoBehaviour
             switch (data.skilType)
             {
                 case SkilData.SkilType.hp_up:
-
+                    if (level < data.damages.Length)
+                    {
                         Init(data);
                         HpUP();
+                    }
 
                     break;
                 case SkilData.SkilType.damage_up:
@@ -52,8 +55,6 @@ public class Skil : MonoBehaviour
                     }
                     break;
             }
-
-          
         }
         if (level == data.damages.Length)
         {
@@ -63,6 +64,7 @@ public class Skil : MonoBehaviour
         gameManger.skillPoint = 0;
         gameManger.exMax = gameManger.exMax + 5;
         spawn.totalEnemy++;
+        enemyInfo.hp += 4;
         gameStopRewume.GameResume();
     }
 
@@ -92,9 +94,14 @@ public class Skil : MonoBehaviour
     {
         if (gameManger.skillPoint > 0)
         {
-            Debug.Log("Healing");
+            
             gameManger.hp = gameManger.hp + 5;
+            if (gameManger.hp >= gameManger.maxhp)
+            {
+                gameManger.hp = gameManger.maxhp;
+            }
             level++;
+            enemyInfo.hp += 4;
             gameManger.skillPoint = 0;
             gameManger.exMax = gameManger.exMax + 5;
         }

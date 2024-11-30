@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: f332300de3b5b8f4799acac215c91549, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3732235674531732070, guid: 5d5225f8f5d53cb44863e741e8961a48, type: 3}
   player: {fileID: 0}
+  follow: {fileID: 0}
+  gameManger: {fileID: 0}
 --- !u!96 &-4953166442640809086
 TrailRenderer:
   serializedVersion: 3
