@@ -4,22 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using Photon.Pun;
 
 public class ui : MonoBehaviour
 {
     public FadeEffect fadeEffect;
     public GameObject pop;
+    public GameObject modePop;
+    public GameObject other;
+    public spawn spawn;
 
     private void Start()
     {
         popDown();
+        modePop.SetActive(false);
     }
         
+    public void modePopup()
+    {
+        modePop.SetActive(true);
+        other.SetActive(false);
+    }
     public void play()
     {
         SceneManager.LoadScene(1);
+        PhotonNetwork.Disconnect();
+        spawn.isSpawn = true;
     }
-
+    public void multi()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void quit()
     {
         Application.Quit();

@@ -6,6 +6,8 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class player : MonoBehaviour
 {
@@ -41,6 +43,7 @@ public class player : MonoBehaviour
     public Rigidbody2D rigidbody;
     public RaycastHit hit;
     public Vector3 moveDistance = Vector3.zero;
+    public PhotonView PV;
 
     #region bullet
     [Header("bullet")]
@@ -54,15 +57,23 @@ public class player : MonoBehaviour
     private void Awake()
     {
         mainCamera = Camera.main;
+        GameObject.FindWithTag("Hit");
         rigidbody = GetComponent<Rigidbody2D>();
         hitUi.SetActive(false);
+        gameManger = FindAnyObjectByType<GameManger>();
+        Instantiate(ps);
+        Instantiate(hitUi);
+
     }
 
     void Update()
     {
         ps.transform.position = transform.position * 0.5f;
 
-        move();
+        if (PV.IsMine)
+        {
+            move();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {

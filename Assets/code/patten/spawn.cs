@@ -20,6 +20,7 @@ public class spawn : MonoBehaviour
     private GameObject l;
     public int enemyCount;
     public int totalEnemy =0;
+    public bool isSpawn;
 
     private void Awake()
     {
@@ -27,8 +28,11 @@ public class spawn : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(laserPatten());
-   /*     StartCoroutine(patten2());*/
+        if(isSpawn == true)
+        {
+            StartCoroutine(laserPatten());
+        }
+       
     }
 
     public Vector3 Return_RandomPosition()
@@ -47,7 +51,7 @@ public class spawn : MonoBehaviour
     }
     private void Update()
     {
-        if (enemyCount < totalEnemy)
+        if (enemyCount < totalEnemy && isSpawn == true)
         {
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
             GameObject instantCapsul = Instantiate(enemy, Return_RandomPosition(), Quaternion.identity);
@@ -72,20 +76,5 @@ public class spawn : MonoBehaviour
         }
     }
 
-   /* IEnumerator Patten4()
-    {
-        while (true)
-        {
-            List<p4> lassers = new List<p4>();
-            for (int i = 0; i < 15; i++)
-            {
-                GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
-                
-                yield return new WaitForSeconds(0.2f);
-                Destroy(g);
-            }
 
-            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
-        }
-    }*/
 }

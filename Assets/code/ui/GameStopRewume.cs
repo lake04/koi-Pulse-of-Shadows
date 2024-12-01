@@ -19,6 +19,7 @@ public class GameStopRewume : MonoBehaviour
     {
         Text = CountText.GetComponent<Text>();
         CountText.SetActive(false);
+
         GameStart();
     }
 

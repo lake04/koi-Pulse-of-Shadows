@@ -11,6 +11,7 @@ public class PatternCountroller : MonoBehaviour
     private GameObject currentPattern; //현재 재생중인 패턴
     private int[]     patternIndexs;    //겹치지 않는 patterns.Length 개수의 숫자
     private int current = 0;            //patternIndexs 배열의 순번
+    public spawn spawn;
 
     private void Awake()
     {
@@ -26,7 +27,11 @@ public class PatternCountroller : MonoBehaviour
 
     private void Update()
     {
-        ChangePattern();
+        if (spawn.isSpawn == true)
+        {
+            ChangePattern();
+        }
+      
         //현제 재생중인 패턴이 종료되어 오브젝트가 비활성화되면
         /* if(currentPattern.activeSelf == false)
           {

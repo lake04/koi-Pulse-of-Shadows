@@ -25,14 +25,16 @@ public class EnemyInfo : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        manger = FindAnyObjectByType<GameManger>();
         player = FindAnyObjectByType<player>();
+        manger = FindAnyObjectByType<GameManger>();
         sp = FindAnyObjectByType<spawn>();
     }
 
     private void Update()
     {
         Rotate();
+        player = FindAnyObjectByType<player>();
+        manger = FindAnyObjectByType<GameManger>();
     }
 
     private void Rotate()

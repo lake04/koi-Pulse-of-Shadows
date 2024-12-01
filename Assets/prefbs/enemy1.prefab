@@ -105,7 +105,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 5
-  player: {fileID: 0}
+  player: {fileID: 357556083108724188, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
   rigidbody2D: {fileID: 0}
   sp: {fileID: 0}
   dieEffect: {fileID: 775777337494005579, guid: ed5c771d7fb6b3b40a56c8d69fd778d6, type: 3}

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Fire : MonoBehaviour
+public class Fire : MonoBehaviourPunCallbacks
 {
     private Rigidbody2D rb;
     public player player;
@@ -11,6 +13,7 @@ public class Fire : MonoBehaviour
     ObjectFollowMousePosition follow;
     Vector2 direction;
     public GameObject prefabBullet;
+    public PhotonView PV;
 
     AudioManager audioManager;
 
@@ -22,7 +25,7 @@ public class Fire : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && isShoot)
+        if (Input.GetMouseButtonDown(0) && isShoot && PV.IsMine)
         {
             audioManager.PlaySFX(audioManager.bullet);
             StartCoroutine(shoot());
@@ -30,10 +33,11 @@ public class Fire : MonoBehaviour
         }
     }
 
+    [PunRPC]
     public IEnumerator shoot()
     {
         isShoot = false;
-        GameObject bullet = Instantiate(prefabBullet,transform.position, transform.rotation);
+        GameObject bullet =Instantiate(prefabBullet,transform.position, transform.rotation);
         yield return new WaitForSeconds(shootCoolTime);
         isShoot = true;
     }
