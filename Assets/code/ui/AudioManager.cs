@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = bk;
         musicSource.Play();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFX(AudioClip clip)

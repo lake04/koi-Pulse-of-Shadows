@@ -17,18 +17,13 @@ public class GameManger : MonoBehaviour
     public int hp;
     public int maxhp;
     public int damage;
+    public bool ismulti;
 
     public Text hpText;
     public player player;
     public GameObject ui;
     public GameObject levelUpUi;
     public GameStopRewume GameStopRewume;
-
-    [SerializeField]
-    private GameController gameController;
-
-    [SerializeField]
-    private TextMeshProUGUI textScore;
 
     private void Start()
     {
@@ -41,7 +36,6 @@ public class GameManger : MonoBehaviour
     {
         exeText.text = "EX:" + ex.ToString() + "/" + exMax.ToString();
         hpText.text =  "Hp:" + hp.ToString() + "/" + maxhp.ToString();
-        textScore.text = gameController.CurremtScore.ToString("F0");
         if (ex >= exMax)
         {
             skillPoint = 1;

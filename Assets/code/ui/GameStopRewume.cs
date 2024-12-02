@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class GameStopRewume : MonoBehaviour
+
+public class GameStopRewume : MonoBehaviourPunCallbacks
 {
     public GameObject CountText = null;
     Text Text = null;
-   /* public Text Text2;*/
-
-  /*  public GameObject CountText2;*/
+    public spawn spawn;
+    public GameManger gm;
+    public PhotonView PV;
 
     public float GameTime = 1.5f;
     int CountDown = 3;
@@ -20,7 +23,16 @@ public class GameStopRewume : MonoBehaviour
         Text = CountText.GetComponent<Text>();
         CountText.SetActive(false);
 
-        GameStart();
+        PV = GetComponent<PhotonView>();
+        if(gm.ismulti == true && PV.IsMine)
+        {
+            spawn.isSpawn = false;
+        }
+
+        else if(gm.ismulti == false)
+        {
+            GameStart();
+        }
     }
 
     public void GameStop()
@@ -43,6 +55,14 @@ public class GameStopRewume : MonoBehaviour
         CountDownFun();
     }
 
+    [PunRPC]
+    public void RPC_GameStart()
+    {
+        Time.timeScale = 0;
+        CountDown = 3;
+        CountDownFun();
+    }
+
     public void CountDownFun()
     {
         CountText.SetActive(true);
@@ -50,8 +70,6 @@ public class GameStopRewume : MonoBehaviour
 
         StartCoroutine(CountDownStart());
     }
-
-
 
     IEnumerator CountDownStart()
     {
@@ -64,6 +82,7 @@ public class GameStopRewume : MonoBehaviour
             {
                 Time.timeScale =1;
                 CountText.SetActive(false);
+                spawn.isSpawn = true;
                 yield return null;
             }
 
@@ -71,5 +90,6 @@ public class GameStopRewume : MonoBehaviour
         }
     }
 
+   
 }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class bullet : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class bullet : MonoBehaviour
     public ObjectFollowMousePosition follow;
     Vector2 direction;
     public GameManger gameManger;
+ 
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class bullet : MonoBehaviour
        player = FindAnyObjectByType<player>();
        follow = FindAnyObjectByType<ObjectFollowMousePosition>();
        gameManger = FindAnyObjectByType<GameManger>();
+      
     }
 
     private void Start()
@@ -43,4 +47,5 @@ public class bullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

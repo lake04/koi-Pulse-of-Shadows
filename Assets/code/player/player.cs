@@ -9,14 +9,15 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class player : MonoBehaviour
+public class player : MonoBehaviourPunCallbacks
 {
     #region 플레이어 정보
     [Header("player")]
     public GameManger gameManger;
-    public float moveSpeed = 7f;
+    public float moveSpeed = 5f;
     public float attackTimde = 2f;
     public bool isdamage;
+   
     #endregion
 
     #region 대쉬
@@ -31,7 +32,6 @@ public class player : MonoBehaviour
     #region effect
     [Header("effect")]
     public TrailRenderer trail;
-    public GameObject hitUi;
 
     //카메라 흔들림
     private float shakeTime;
@@ -44,6 +44,8 @@ public class player : MonoBehaviour
     public RaycastHit hit;
     public Vector3 moveDistance = Vector3.zero;
     public PhotonView PV;
+    public Material[] mat = new Material[2];
+    SpriteRenderer sprite;
 
     #region bullet
     [Header("bullet")]
@@ -56,29 +58,40 @@ public class player : MonoBehaviour
 
     private void Awake()
     {
+        Screen.SetResolution(1980, 1080, true);
         mainCamera = Camera.main;
+        /*PhotonNetwork.ConnectUsingSettings();*/
         GameObject.FindWithTag("Hit");
+        sprite = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
-        hitUi.SetActive(false);
+        
         gameManger = FindAnyObjectByType<GameManger>();
+      
         Instantiate(ps);
-        Instantiate(hitUi);
-
+        
+       
+        
+        sprite.material = PV.IsMine ? mat[0] : mat[1];
     }
 
     void Update()
     {
         ps.transform.position = transform.position * 0.5f;
 
-        if (PV.IsMine)
+
+        if (gameManger.ismulti == false)
         {
             move();
         }
-
+        if (gameManger.ismulti == true && PV.IsMine)
+        {
+            RPC_move();
+        }
         if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             OnShakeCamera(0.2f, 0.09f);
             StartCoroutine(desh());
+            Debug.Log("대쉬");
         }
     }
 
@@ -120,16 +133,18 @@ public class player : MonoBehaviour
             StartCoroutine(hitAnim());
             StartCoroutine(coolTime());
             OnShakeCamera(0.3f);
-            if (gameManger.hp <= 0)
+            if (gameManger.hp <= 0 && PV.IsMine)
             {
                 SceneManager.LoadScene(0);
                 Destroy(this.gameObject);
+                PhotonNetwork.Disconnect();
             }
         }
-        else if (gameManger.hp <= 0)
+        else if (gameManger.hp <= 0 && PV.IsMine)
         {
             SceneManager.LoadScene(0);
             Destroy(this.gameObject);
+            PhotonNetwork.Disconnect();
         }
     }
 
@@ -138,7 +153,7 @@ public class player : MonoBehaviour
         canDash = false;
         trail.emitting = true;
         transform.position += moveDistance * dashSpeed;
-        dashEffect();
+     
         yield return new WaitForSeconds(dashCoolDown);
         trail.emitting = false;
         canDash = true;
@@ -147,13 +162,18 @@ public class player : MonoBehaviour
 
     }
 
-    IEnumerator dashEffect()
-    {
-        
 
-        yield return new WaitForSeconds(dashCoolDown);
-    }
     public void move()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        moveDistance = new Vector3(x, y, 0);
+        transform.position += moveDistance * moveSpeed * Time.deltaTime;
+    }
+
+    [PunRPC]
+    public void RPC_move()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
@@ -172,9 +192,9 @@ public class player : MonoBehaviour
     }
     IEnumerator hitAnim()
     {
-        hitUi.SetActive(true);
+  
         yield return new WaitForSeconds(0.2f);
-        hitUi.SetActive(false);
+      
     }
 
     //카메라

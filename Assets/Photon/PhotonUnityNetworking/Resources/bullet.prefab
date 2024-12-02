@@ -168,6 +168,7 @@ MonoBehaviour:
   player: {fileID: 0}
   follow: {fileID: 0}
   gameManger: {fileID: 0}
+  PV: {fileID: -251208832867536175}
 --- !u!96 &-4953166442640809086
 TrailRenderer:
   serializedVersion: 3
@@ -299,7 +300,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1567389089940742782}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

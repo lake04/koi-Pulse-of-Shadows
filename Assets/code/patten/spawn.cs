@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Realtime;
+using Photon.Pun;
 
 public class lazer
 {
-
+  public  PhotonView PV;
+    
 }
 
-/*public class p4
-{
-}*/
-public class spawn : MonoBehaviour
+
+public class spawn : MonoBehaviourPunCallbacks
 {
     public GameObject rangeObject;
     BoxCollider2D rangeCollider;
@@ -21,6 +22,8 @@ public class spawn : MonoBehaviour
     public int enemyCount;
     public int totalEnemy =0;
     public bool isSpawn;
+    public GameManger gm;
+    public PhotonView PV;
 
     private void Awake()
     {
@@ -28,11 +31,14 @@ public class spawn : MonoBehaviour
     }
     private void Start()
     {
-        if(isSpawn == true)
-        {
-            StartCoroutine(laserPatten());
-        }
        
+         StartCoroutine(laserPatten());
+
+        if (PV.IsMine)
+        {
+            PV.RPC("RPC_laserPatten", RpcTarget.AllBuffered);
+            /* RPC_laserPatten();*/
+        }
     }
 
     public Vector3 Return_RandomPosition()
@@ -51,6 +57,18 @@ public class spawn : MonoBehaviour
     }
     private void Update()
     {
+        
+            enemySp();
+
+        if(PV.IsMine && gm.ismulti == true)
+        {
+            PV.RPC("RPC_enemySp", RpcTarget.AllBuffered);
+            /*RPC_enemySp();*/
+        }
+    }
+
+    public void enemySp()
+    {
         if (enemyCount < totalEnemy && isSpawn == true)
         {
             // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
@@ -59,8 +77,25 @@ public class spawn : MonoBehaviour
         }
     }
 
-
     IEnumerator laserPatten()
+    {
+        while (true)
+        {
+            List<lazer> lassers = new List<lazer>();
+            for (int i = 0; i < 10; i++)
+            {
+                GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
+                yield return new WaitForSeconds(0.2f);
+
+                Destroy(g, 2);
+            }
+            
+            yield return new WaitForSeconds(UnityEngine.Random.Range(5, 10));
+        }
+    }
+
+    [PunRPC]
+    IEnumerator RPC_laserPatten()
     {
         while (true)
         {
@@ -76,5 +111,14 @@ public class spawn : MonoBehaviour
         }
     }
 
-
+    [PunRPC]
+    public void RPC_enemySp()
+    {
+        if (enemyCount < totalEnemy && isSpawn == true)
+        {
+            // 생성 위치 부분에 위에서 만든 함수 Return_RandomPosition() 함수 대입
+            GameObject instantCapsul = Instantiate(enemy, Return_RandomPosition(), Quaternion.identity);
+            enemyCount++;
+        }
+    }
 }

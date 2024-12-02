@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 2187880979392017250}
   - component: {fileID: 7877619718189592648}
   - component: {fileID: 808705659955732005}
+  - component: {fileID: 7371519155778711891}
   m_Layer: 6
   m_Name: player
   m_TagString: Player
@@ -220,13 +221,15 @@ MonoBehaviour:
   attackTimde: 2
   isdamage: 0
   canDash: 1
-  dashSpeed: 5
+  dashSpeed: 4.2
   trail: {fileID: 7036005568032991447}
-  hitUi: {fileID: 4859904198160786525, guid: 365c03a8427d55e44b2313e56570291f, type: 3}
   ps: {fileID: 3150644755510051709, guid: 636391d9a9eb64345827d50026a41729, type: 3}
   rigidbody: {fileID: 0}
   moveDistance: {x: 0, y: 0, z: 0}
   PV: {fileID: 7877619718189592648}
+  mat:
+  - {fileID: 2100000, guid: fe04b516f30d220439193af62c9ad0b2, type: 2}
+  - {fileID: 2100000, guid: 1159ea5a7becc43469c6f368be14dc6e, type: 2}
   bulletPos: {fileID: 8333736241737722834}
   bulletSpeed: 2
   shootCoolTime: 0.5
@@ -361,6 +364,7 @@ MonoBehaviour:
   isShoot: 1
   prefabBullet: {fileID: 4991995650617577800, guid: b2a64af3fd705d2478b03e0f65c9719d, type: 3}
   PV: {fileID: 7877619718189592648}
+  gm: {fileID: 0}
 --- !u!114 &7877619718189592648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +404,27 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!95 &7371519155778711891
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3091928310400741944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fad1aefcc7385b94b99da8bc1ba9433a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3405187741817864805
 GameObject:
   m_ObjectHideFlags: 0

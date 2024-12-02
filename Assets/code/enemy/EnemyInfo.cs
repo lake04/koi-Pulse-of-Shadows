@@ -1,9 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemyInfo : MonoBehaviour
+public class EnemyInfo : MonoBehaviourPunCallbacks
 {
     #region enemy¡§∫∏
     [Header("enemy")]
@@ -18,23 +19,32 @@ public class EnemyInfo : MonoBehaviour
     public  Rigidbody2D rigidbody2D;
     public spawn sp;
     public GameObject dieEffect;
+    public  PhotonView PV;
+    public GameManger gm;
     #endregion
 
-    public GameManger manger;
+    
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         player = FindAnyObjectByType<player>();
-        manger = FindAnyObjectByType<GameManger>();
         sp = FindAnyObjectByType<spawn>();
+        PV = GetComponent<PhotonView>();
+        gm = FindAnyObjectByType<GameManger>();
     }
 
     private void Update()
     {
-        Rotate();
         player = FindAnyObjectByType<player>();
-        manger = FindAnyObjectByType<GameManger>();
+        gm = FindAnyObjectByType<GameManger>();
+      
+            Rotate();
+
+       /* if (gm.ismulti == true && PV.IsMine)
+        {
+            PRC_Rotate();
+        }*/
     }
 
     private void Rotate()
@@ -54,16 +64,34 @@ public class EnemyInfo : MonoBehaviour
         transform.position += (-dir.normalized * speed * Time.deltaTime);
     }
 
+    [PunRPC]
+    private void PRC_Rotate()
+    {
+        Vector2 direction = new Vector2(transform.position.x - playerTransform.position.x, transform.position.y - playerTransform.position.y);
+
+        RaycastHit2D raycast = Physics2D.Raycast(transform.position, direction, isLayer);
+        Debug.DrawRay(transform.position, direction, new Color(0, 1, 0));
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion angleAxis = Quaternion.AngleAxis(angle, Vector3.forward);
+        Quaternion rotation = Quaternion.Slerp(transform.rotation, angleAxis, rotateSpeed * Time.deltaTime);
+
+        transform.rotation = rotation;
+
+        Vector3 dir = direction;
+        transform.position += (-dir.normalized * speed * Time.deltaTime);
+    }
+
     public void onDamage()
     {
         if (hp >0)
         {
-            hp -=manger.damage;
+            hp -= gm.damage;
            if (hp <= 0)
             {
                 Destroy(this.gameObject);
                 Instantiate(dieEffect, transform.position, Quaternion.identity);
-                manger.ex++;
+                gm.ex++;
                 sp.enemyCount--;
             }
         }
@@ -71,7 +99,7 @@ public class EnemyInfo : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(dieEffect, transform.position, Quaternion.identity);
-            manger.ex++;
+            gm.ex++;
             sp.enemyCount--;
         }
     }

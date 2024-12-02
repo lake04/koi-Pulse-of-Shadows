@@ -64,7 +64,7 @@ public class Skil : MonoBehaviour
         gameManger.skillPoint = 0;
         gameManger.exMax = gameManger.exMax + 5;
         spawn.totalEnemy++;
-        enemyInfo.hp += 3;
+        enemyInfo.hp += 2;
         gameStopRewume.GameResume();
     }
 
