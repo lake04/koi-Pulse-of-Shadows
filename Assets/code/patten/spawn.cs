@@ -82,10 +82,10 @@ public class spawn : MonoBehaviourPunCallbacks
         while (true)
         {
             List<lazer> lassers = new List<lazer>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GameObject g = Instantiate(l, Return_RandomPosition(), Random.rotation);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.3f);
 
                 Destroy(g, 2);
             }

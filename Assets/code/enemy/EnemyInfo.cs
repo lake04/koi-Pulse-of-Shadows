@@ -21,9 +21,11 @@ public class EnemyInfo : MonoBehaviourPunCallbacks
     public GameObject dieEffect;
     public  PhotonView PV;
     public GameManger gm;
+    SpriteRenderer sprite;
+    public Material[] mat = new Material[2];
     #endregion
 
-    
+
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -32,10 +34,16 @@ public class EnemyInfo : MonoBehaviourPunCallbacks
         sp = FindAnyObjectByType<spawn>();
         PV = GetComponent<PhotonView>();
         gm = FindAnyObjectByType<GameManger>();
+        sprite = GetComponent<SpriteRenderer>();
+        
     }
 
     private void Update()
     {
+        if (sp.isSpawn == false)
+        {
+            hp = 2;
+        }
         player = FindAnyObjectByType<player>();
         gm = FindAnyObjectByType<GameManger>();
       
@@ -61,7 +69,7 @@ public class EnemyInfo : MonoBehaviourPunCallbacks
         transform.rotation = rotation;
 
         Vector3 dir = direction;
-        transform.position += (-dir.normalized * speed * Time.deltaTime);
+        transform.position += (-dir.normalized * speed * Time.deltaTime) ;
     }
 
     [PunRPC]
@@ -87,7 +95,9 @@ public class EnemyInfo : MonoBehaviourPunCallbacks
         if (hp >0)
         {
             hp -= gm.damage;
-           if (hp <= 0)
+            StartCoroutine(DamgeEffecting());
+            sprite.color = Color.red;
+            if (hp <= 0)
             {
                 Destroy(this.gameObject);
                 Instantiate(dieEffect, transform.position, Quaternion.identity);
@@ -102,5 +112,12 @@ public class EnemyInfo : MonoBehaviourPunCallbacks
             gm.ex++;
             sp.enemyCount--;
         }
+    }
+
+    private IEnumerator DamgeEffecting()
+    {
+        sprite.material = mat[1];
+        yield return new WaitForSeconds(0.2f);
+        sprite.material = mat[0];
     }
 }

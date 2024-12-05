@@ -40,19 +40,16 @@ public class Skil : MonoBehaviour
             switch (data.skilType)
             {
                 case SkilData.SkilType.hp_up:
-                    if (level < data.damages.Length)
-                    {
-                        Init(data);
-                        HpUP();
-                    }
 
+                    gameManger.maxhp = + 2;
+                    gameManger.hp = gameManger.maxhp;
+                    level++;
+                    gameManger.exMax = gameManger.exMax + 5;
                     break;
                 case SkilData.SkilType.damage_up:
-                    if (level < data.damages.Length)
-                    {
-                        Init(data);
-                        DamageUP();
-                    }
+                        gameManger.damage = gameManger.damage + 2;
+                    level++;
+                    gameManger.exMax = gameManger.exMax + 5;
                     break;
             }
         }
@@ -60,11 +57,8 @@ public class Skil : MonoBehaviour
         {
             GetComponent<Button>().interactable = false;
         }
-        level++;
         gameManger.skillPoint = 0;
-        gameManger.exMax = gameManger.exMax + 5;
-        spawn.totalEnemy++;
-        enemyInfo.hp += 2;
+        enemyInfo.hp += 1;
         gameStopRewume.GameResume();
     }
 

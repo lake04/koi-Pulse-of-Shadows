@@ -16,8 +16,8 @@ public class player : MonoBehaviourPunCallbacks
     public GameManger gameManger;
     public float moveSpeed = 5f;
     public float attackTimde = 2f;
-    public bool isdamage;
-   
+    public bool isdamage = true;
+
     #endregion
 
     #region 대쉬
@@ -32,6 +32,7 @@ public class player : MonoBehaviourPunCallbacks
     #region effect
     [Header("effect")]
     public TrailRenderer trail;
+    public GameObject hitUi;
 
     //카메라 흔들림
     private float shakeTime;
@@ -64,12 +65,10 @@ public class player : MonoBehaviourPunCallbacks
         GameObject.FindWithTag("Hit");
         sprite = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
-        
+        isdamage = true;
         gameManger = FindAnyObjectByType<GameManger>();
       
         Instantiate(ps);
-        
-       
         
         sprite.material = PV.IsMine ? mat[0] : mat[1];
     }
@@ -77,7 +76,7 @@ public class player : MonoBehaviourPunCallbacks
     void Update()
     {
         ps.transform.position = transform.position * 0.5f;
-
+        hitUi.transform.position = new Vector3(0,0,0);
 
         if (gameManger.ismulti == false)
         {
@@ -93,34 +92,45 @@ public class player : MonoBehaviourPunCallbacks
             StartCoroutine(desh());
             Debug.Log("대쉬");
         }
+
+        if(Input.GetKeyDown (KeyCode.V))
+            {
+            gameManger.hp = 100000;
+        }
     }
 
     #region 충돌 처리
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (isdamage == true)
         {
-            onDamage();
-            Debug.Log("damage");
+            if (collision.gameObject.CompareTag("enemy"))
+            {
+                onDamage();
+                Debug.Log("damage");
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("laser"))
+        if (isdamage == true)
         {
-            onDamage();
-            Debug.Log("damage");
-        }
-        else if (collision.gameObject.CompareTag("pt2"))
-        {
-            onDamage();
-            Debug.Log("damage");
-        }
+            if (collision.gameObject.CompareTag("laser"))
+            {
+                onDamage();
+                Debug.Log("damage");
+            }
+            else if (collision.gameObject.CompareTag("pt2"))
+            {
+                onDamage();
+                Debug.Log("damage");
+            }
 
-        else if (collision.gameObject.CompareTag("enemy"))
-        {
-            onDamage();
-            Debug.Log("damage");
+            else if (collision.gameObject.CompareTag("enemy"))
+            {
+                onDamage();
+                Debug.Log("damage");
+            }
         }
     }
     #endregion
@@ -131,7 +141,6 @@ public class player : MonoBehaviourPunCallbacks
         {
             gameManger.hp--;
             StartCoroutine(hitAnim());
-            StartCoroutine(coolTime());
             OnShakeCamera(0.3f);
             if (gameManger.hp <= 0 && PV.IsMine)
             {
@@ -152,14 +161,13 @@ public class player : MonoBehaviourPunCallbacks
     {
         canDash = false;
         trail.emitting = true;
+        StartCoroutine(coolTime());
         transform.position += moveDistance * dashSpeed;
      
         yield return new WaitForSeconds(dashCoolDown);
         trail.emitting = false;
         canDash = true;
-
         /*  yield return new WaitForSeconds(effecting);*/
-
     }
 
 
@@ -185,16 +193,17 @@ public class player : MonoBehaviourPunCallbacks
     #region camera
     IEnumerator coolTime()
     {
-        isdamage = true;  // 무적 상태 시작
-       
-        yield return new WaitForSeconds(1.2f);  // 무적 시간 동안 대기
-        isdamage = false;  // 무적 상태 해제
+        isdamage = false;  // 무적 상태 시작
+        yield return new WaitForSeconds(0.8f);  // 무적 시간 동안 대기
+        isdamage = true;  // 무적 상태 해제
     }
     IEnumerator hitAnim()
     {
-  
+        hitUi.SetActive(true);
+        StartCoroutine(coolTime());
         yield return new WaitForSeconds(0.2f);
-      
+        
+        hitUi.SetActive(false);
     }
 
     //카메라

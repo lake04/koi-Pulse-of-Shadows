@@ -695,9 +695,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 479649633}
     - target: {fileID: 357556083108724188, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
+      propertyPath: moveSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 357556083108724188, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
       propertyPath: gameManger
       value: 
       objectReference: {fileID: 630739038}
+    - target: {fileID: 741977188232405074, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2187880979392017250, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
       propertyPath: gm
       value: 
@@ -1234,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc68353bc5a1c4086ca454099a0aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   moveDirection: {x: 0, y: 1, z: 0}
 --- !u!1 &388277297
 GameObject:
@@ -2329,7 +2337,7 @@ MonoBehaviour:
   skillPoint: 0
   hp: 0
   maxhp: 10
-  damage: 3
+  damage: 2
   ismulti: 0
   hpText: {fileID: 2013992427}
   player: {fileID: 218024924}
@@ -3462,7 +3470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc68353bc5a1c4086ca454099a0aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   moveDirection: {x: 0, y: 1, z: 0}
 --- !u!61 &806915211
 BoxCollider2D:
@@ -5464,7 +5472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc68353bc5a1c4086ca454099a0aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!61 &1278104799
 BoxCollider2D:
@@ -6367,7 +6375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc68353bc5a1c4086ca454099a0aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   moveDirection: {x: 0, y: -1, z: 0}
 --- !u!1 &1560130132 stripped
 GameObject:
@@ -7302,7 +7310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebc68353bc5a1c4086ca454099a0aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 20
   moveDirection: {x: -1, y: 0, z: 0}
 --- !u!1 &1821013852
 GameObject:

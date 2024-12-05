@@ -11,7 +11,7 @@ public class bullet : MonoBehaviour
     public EnemyInfo enemy;
     private Rigidbody2D rb;
     public player player;
-    private float speed =10f;
+    private float speed =20f;
     public ObjectFollowMousePosition follow;
     Vector2 direction;
     public GameManger gameManger;

@@ -101,17 +101,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5f557fe470d14419fde88020a29983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 8
+  hp: 2
   distance: 20
   isLayer:
     serializedVersion: 2
     m_Bits: 64
-  speed: 5
+  speed: 10
   player: {fileID: 357556083108724188, guid: ee8610515fc65b0429f4c8be8be955ba, type: 3}
   rigidbody2D: {fileID: 0}
   sp: {fileID: 0}
   dieEffect: {fileID: 775777337494005579, guid: ed5c771d7fb6b3b40a56c8d69fd778d6, type: 3}
-  manger: {fileID: 0}
+  PV: {fileID: 0}
+  gm: {fileID: 0}
+  mat:
+  - {fileID: 2100000, guid: ccd4ed30411c0bb40a46ebf2417deadd, type: 2}
+  - {fileID: 2100000, guid: 748488d51f446314d9583429f42500c5, type: 2}
 --- !u!61 &2178536450260487283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -202,7 +206,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4387553964512571270}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
